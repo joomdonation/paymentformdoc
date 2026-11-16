@@ -11,15 +11,18 @@ Payment Form is a Joomla extension that lets you create custom forms, collect in
 
 ## Key Capabilities
 
-- **Create unlimited payment forms.** Build as many forms as you need for different purposes.
-- **Collect information with custom fields.** Add fields for the information you need from customers.
-- **Process payments.** Choose from more than 70 payment options, including PayPal, Stripe, Mollie, Authorize.net, eWAY, Moneybookers, and offline payment methods.
-- **Manage payment records.** View, add, edit, search, filter, and export payment records. Issue refunds from the Joomla administrator area when the gateway supports them.
-- **Offer discounts.** Create coupon codes for fixed-amount or percentage discounts.
-- **Send automated emails.** Configure email notifications for customers and administrators.
-- **Generate PDF invoices.** Create and send PDF invoices automatically.
-- **Prefill form fields.** Save customers time by filling in fields with profile data from Joomla, Membership Pro, Community Builder, or JomSocial.
-- **Integrate with newsletter services.** Add customers to ACYMailing or Mailchimp after they complete a payment.
+- **Flexible payment forms.** Create unlimited forms. Set a fixed amount per form, let customers enter an amount, or calculate the total from their selections, such as ticket type, quantity, and an optional lunch.
+- **Custom form layouts.** Place labels beside or above inputs, arrange fields in one to four columns, or build a custom grid with different field widths. Hide labels for individual fields or for the entire form. See [Modern Form Layouts](/basic-setup/forms/modern-form-layouts).
+- **22 field types.** Use text inputs, dropdowns, checkboxes, date pickers, file uploads, signatures, and more. Validate entries in the browser and on the server, use input masks for formatted values, and [show or hide fields based on other answers](/basic-setup/custom-fields/field-dependencies).
+- **Form prefill and account creation.** Prefill fields using profile data from Joomla, Membership Pro, Community Builder, or JomSocial. You can also let customers create a Joomla account when they submit a payment form.
+- **70+ payment options.** Accept payments through PayPal, Authorize.net, eWAY, Stripe, Mollie, Redsys, Square, or an offline method. The package includes several payment plugins, with additional gateways available as paid add-ons. Developers can write their own [payment plugins](/basic-setup/payment-plugins).
+- **Tax support.** Set a fixed percentage tax rate for each form or calculate VAT using [EU Tax Rules](/basic-setup/eu-tax-rules).
+- **Coupons.** Offer fixed-amount or percentage discounts and limit how many times a coupon can be redeemed.
+- **PDF invoices and payment history.** Generate PDF invoices automatically and attach them to customer emails. Signed-in customers can view their payments and download available invoices from their [payment history](/frontend-items/payment-history).
+- **Payment notifications and automation.** Send email notifications to customers and administrators. After payment, integrations can assign or remove Joomla user groups, add customers to ACYMailing or Mailchimp, run a custom PHP script, or send payment data to an external URL through a webhook.
+- **Payment management.** View, search, edit, and approve payment records in the Joomla administrator area or from the frontend with the appropriate permissions. Export records to Excel or CSV and issue refunds when the payment gateway supports them.
+- **Revenue chart.** Track revenue or payment counts over a selected period, filter by form, or compare with the same period last year. Use **Per Form** mode to compare selected forms side by side.
+- **Multilingual forms and editable messages.** Translate forms, fields, messages, and emails for multilingual sites. Edit messages and emails in a visual editor and translate language strings in the Joomla administrator area.
 
 ## Who Should Use Payment Form?
 
@@ -43,10 +46,11 @@ Payment Form is a Joomla extension that lets you create custom forms, collect in
 
 ## About This Manual
 
-- Installing and configuring Payment Form
+- Installing, updating, and configuring Payment Form
 - Creating and managing forms
 - Adding and configuring fields
 - Setting up payment gateways
+- Configuring taxes and PDF invoices
 - Managing payment records
 - Setting up coupons and plugin integrations
 - Using frontend features and following common workflows
