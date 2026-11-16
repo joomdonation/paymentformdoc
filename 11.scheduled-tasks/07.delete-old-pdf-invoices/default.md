@@ -4,19 +4,15 @@ media_order: task-paymentform-delete-old-pdf-invoices.png
 published: true
 ---
 
-Each time Payment Form generates PDF invoice, a PDF file for that invoice will be generated and stored on server and costs hosting space. This scheduled task is used to delete invoice PDFs which are older than one day each time it is executed. To use this feature:
+Use this task if your site generates PDF invoices and you want to reclaim disk space. On each run, it deletes PDF files in `media/com_pmform/invoices` that were last modified more than 24 hours ago.
 
-## Create and configure the scheduled task
+Payment Form generates a fresh PDF from the payment record when someone downloads the invoice from the administrator payments list or from **Payment History**. See [Invoice Settings](/getting-started/configuration/invoice-settings).
 
-1. Go to **System -> Plugins**, make sure **Task - Payment Form** plugin is enabled.
-2. Go to **System -> Scheduled Tasks**, press New button in the toolbar to create a new scheduled task for **Payment Form - Delete Old Invoices** task type.
-3. Setup all required parameters, save it.
+## Configure the task
 
-![task-paymentform-delete-old-pdf-invoices](task-paymentform-delete-old-pdf-invoices.png "task-paymentform-delete-old-pdf-invoices")
+1. [Create a scheduled task](/scheduled-tasks#create-a-scheduled-task) of type **Payment Form - Delete Old Invoices**.
+2. Under **Basic Fields**, set **Interval in Days** to **7** for weekly cleanup, or choose a shorter interval if your site generates many invoices.
 
-## Task Basic Fields
-This scheduled task should not be run so often. Run it every few days should be enough. So you can setup **Basic Fields** to following values
+The 24-hour cutoff is fixed. Only the schedule is configurable.
 
-- **Execution Rule**: Set to **Interval, Days**
-- **Interval in Days**: Set to the number you want, for example, if you set it to 7, the task will be run every 7 days.
-- **Execution Time (UTC)**: Choose the time in the day the task will be executed, for example 10:00 AM.
+![Joomla settings for the Delete Old Invoices task](task-paymentform-delete-old-pdf-invoices.png)
