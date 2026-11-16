@@ -4,11 +4,13 @@ media_order: resend_email.png
 published: true
 ---
 
-Sometime, you might want to resend confirmation email to user (the email which received when process payment using the form). For example, if they did not receive email for some reasons or if you update data of payment record and resend email to them. For that :
+Use **Resend Email** if a customer missed their payment email or needs a new copy after you correct their payment details.
 
-- From Payments management screen, check on the checkbox next to registration record
-- Press **Resend Email** button in the toolbar
+1. Open **Components → Payment Form → Payments**.
+2. Check that the record has the correct email address and payment details.
+3. Select the checkbox for each payment. When resending multiple payments, select one form at a time.
+4. Click **Resend Email** in the toolbar.
 
-The system will resend confirmation email to user and notification email to administrator (the same email when user makes payment using your form)
+![Resend Email button on the Payments screen](resend_email.png)
 
-![resend_email](resend_email.png "resend_email")
+Payment Form uses the current payment details and email settings to send the customer confirmation and the administrator notification again. For an offline payment, it uses the offline confirmation template, even if the payment has since been approved. The separate approval and refund emails are sent when those actions are processed. See [Messages](/getting-started/configuration/messages).

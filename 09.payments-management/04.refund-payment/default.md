@@ -4,12 +4,14 @@ media_order: refund.png
 published: true
 ---
 
-## Refund Payment
-If you one of payment methods support refund payment like PayPal (require configure Advanced parameters), Stripe, Stripe Checkout, Mollie, PayPal, you can refund payment directly from administrator area of your site. To do that:
+Use **Refund** to return a payment through its original payment gateway. The payment must be **Paid**, have a positive **Gross Amount**, and have a transaction ID. The payment plugin must support refunds and your account must have **Configure ACL & Options** permission for Payment Form.
 
-- From payments management screen, click on the payment record you want to refund
-- On payment edit screen, click on **Refund** button
+For the built-in PayPal plugin, enter your REST API **Client ID** and **Client Secret** on the plugin's **Advanced** tab. In sandbox mode, use **Sandbox Client ID** and **Sandbox Client Secret**. See [Payment Plugins](/basic-setup/payment-plugins).
 
-That will process refund for payment record. You do not need to login to payment gateway to find the transaction any process refund.
+1. Open **Components → Payment Form → Payments** and edit the payment record.
+2. Verify the payment amount and transaction ID. The refund dialog asks for confirmation and has no field for a partial refund amount.
+3. Click **Refund** and confirm. After processing, check that the record displays **Refunded** in the Payments list. If an error appears, check the transaction in your gateway account before retrying.
 
-![refund](refund.png "refund")
+![Refund button on the payment edit screen](refund.png)
+
+To customize the email sent to the customer after a successful refund, edit **Payment Refunded Email Subject** and **Payment Refunded Email Body** under **Payment Form → Configuration → Messages**. Leave the subject blank to skip this email. See [Messages](/getting-started/configuration/messages).
