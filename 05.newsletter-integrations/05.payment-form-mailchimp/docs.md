@@ -7,14 +7,32 @@ published: true
 media_order: pmf_mailchimp_plugin.png
 ---
 
-This plugin allows you to assign payers of each form to specific Mailchimp Tags, in addition to Audiences and Groups.
+Use **Payment Form - Mailchimp** to add customers to one or more Mailchimp audiences after a successful payment. You can also assign them to groups and apply tags so you can segment contacts by the form they paid through.
 
-You can then use Mailchimp to organize and segment your contacts based on the forms they have submitted, making it easier to create targeted email campaigns, send relevant newsletters, and deliver personalized marketing communications to the right audience.
+## Connect Payment Form to Mailchimp
 
-## Enable And Configure Plugin
+1. In Mailchimp, set up at least one audience. Create any groups and tags you want to use in that audience.
+2. Generate a key for your Mailchimp account. See [Mailchimp's guide to API keys](https://mailchimp.com/help/about-api-keys/).
+3. In the Joomla administrator area, go to **System → Plugins** and open **Payment Form - Mailchimp**. Enter the key in **API Key**, enable the plugin, and save it.
 
-To use this feature, go to **System -> Plugins**, find and enable **Payment Form - Mailchimp** plugin.
+**Double opt-in** applies to all forms using this plugin. By default, **No** adds new contacts as subscribed. Choose **Yes** to add them as pending until they confirm their subscription. See [Mailchimp's guide to double opt-in](https://mailchimp.com/help/about-double-opt-in/).
 
-After enabling the plugin, when you add or edit a form, you will see a new tab called **Mailchimp Settings**. In this tab, you can select the Audiences, Groups, and Tags that users who complete payment through this form will be assigned to in Mailchimp
+## Choose audiences, groups, and tags for a form
 
-![pmf_mailchimp_plugin](pmf_mailchimp_plugin.png "pmf_mailchimp_plugin")
+Go to **Components → Payment Form → Forms**, open the form, and select the **Mailchimp Settings** tab.
+
+| Setting | What to select |
+| --- | --- |
+| **Assign to Audiences** | Select at least one audience for this form to send contacts to Mailchimp. |
+| **Add to Groups** | Optionally select groups that belong to the audiences you selected above. |
+| **Add Tags** | Optionally select tags that belong to the audiences you selected above. |
+
+The group and tag fields appear when the plugin finds groups or tags in Mailchimp. A group or tag takes effect only when its audience is selected on the form. Save the form and repeat these steps for each form you want to connect to Mailchimp.
+
+![Mailchimp Settings tab with an audience, a group, and two tags selected](pmf_mailchimp_plugin.png)
+
+## Test the integration
+
+Complete a test payment using an email address that is new to the selected audiences. If you use an offline payment method, [approve the payment](/payments-management/approve-payments) first. In Mailchimp, look up the contact in each selected audience and check its groups, tags, and subscription status. If you enabled **Double opt-in**, check that the contact can confirm the subscription.
+
+If the **Mailchimp Settings** tab is missing or empty, check that the plugin is enabled and that you saved a valid API key for the account that manages the audiences. If the contact is missing after the payment is marked **Paid**, check the email address on the payment, the audience selections on the form, and `plg_pmform_mailchimp.php` in Joomla's configured log folder for API errors.

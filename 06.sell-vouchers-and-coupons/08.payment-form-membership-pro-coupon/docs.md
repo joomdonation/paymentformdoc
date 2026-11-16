@@ -6,28 +6,27 @@ taxonomy:
 published: true
 ---
 
-This plugin gives you a way to sell coupon for Membership Pro extension. You can configure it so that each time someone makes payment using the configured forms, the plugin will generate coupon code with the payment amount in Membership Pro. The coupon code will be sent to user (or any user the payer want) and then the user can use that coupon code to receive discount while registering for events in Membership Pro.
+Sell fixed-amount coupons that customers can redeem on eligible Membership Pro plans. Each successful payment on a configured form creates a coupon in Membership Pro. For a recurring subscription, the discount applies to the first payment only.
 
-## Enable And Configure Plugin
+## Enable the plugin and configure the form
 
-To use this feature, please find and enable **Payment Form - Membership Pro Coupon** plugin. The plugin has the following parameters:
+1. In Joomla, go to **System → Plugins** and enable **Payment Form - Membership Pro Coupon**. To set an expiration period for this integration, enter the number of days in **Number Days**. Leave it blank for no expiration.
+2. Go to **Components → Payment Form → Forms**, open the form that sells the coupons, and select **MP Coupon Settings**.
+3. Set **Enable Membership Pro Coupon Generation** to **Yes**, configure the options below, and save the form.
 
-- **Form Ids**: Enter IDs of the forms which you want to generate coupon codes when someone makes payment using that form (comma separated). You must enter IDs of the forms you want here, otherwise, no coupon will be generated.
-- **Number Days**: If you want the coupon to be valid for only certain number of days since the time it is created, enter the number into this parameter. Leave it empty and there will be no time limit for using the coupon
+| Setting | What to choose |
+| --- | --- |
+| **Coupon Amount** | Enter a positive whole number to set the discount, or leave it blank to use the payment amount. |
+| **Times** | Set the maximum number of uses per coupon. The default is `1`. Enter `0` to allow unlimited uses. |
+| **Plans** | Select the Membership Pro plans that accept the coupon. Leave all plans unselected to allow redemption on any plan. |
+| **Assign Coupon To User** | Set to **Yes** to restrict redemption to the payer's Joomla account. Use this option with a form that requires a Joomla account. For gifts, leave it set to **No** so the recipient can redeem the coupon. |
 
-### Advanced Parameters
-If you want to send the generated coupon code to a different user (not the user who is making the payment), please create a custom field to allow entering email of that receiver in the form. Then configure the parameters below in the plugin:
+## Email the coupon code
 
-- **Coupon Receive Email Field** : Select the the field you created above
-- **Coupon Notification Email Subject** : Enter subject of the email which will be sent to the the user who receives the coupon.
-- **Coupon Notification Email Body** : Enter the email message which will be sent to the user who receives the coupon
+Use the tags below in the payer's payment email or in the plugin's gift notification. For gift delivery, select the recipient's custom field in **Coupon Receive Email Field** and fill in **Coupon Notification Email Subject** and **Coupon Notification Email Body**. See [how to configure delivery to the payer or a gift recipient](/sell-vouchers-and-coupons#email-the-code-to-the-payer-or-a-gift-recipient).
 
-For the email, you can use any tags like the in the email sent from payment form extension. The most important tags (related to voucher data are): [MP_COUPON_CODE], [MP_COUPON_AMOUNT], [MP_COUPON_VALID_TO]
-
-### Send Voucher Code
-
-In case you do not use advanced parameters above, you can still edit the email message of your form, insert the tags above (beside normal tags) to send voucher code to the user who makes payment [MP_COUPON_CODE], [MP_COUPON_AMOUNT], [MP_COUPON_VALID_TO]
-
-### Use Fixed Coupon Amount
-
-If you want to create coupon with fixed payment amount (instead of the amount users make payment on the form), edit the form, look at **MP Coupon Settings** tab, enter the amount there. Then all coupons created for that form will have that fixed amount, not depend on how much users pay.
+| Tag | Inserts |
+| --- | --- |
+| `[MP_COUPON_CODE]` | The code to enter when subscribing. |
+| `[MP_COUPON_AMOUNT]` | The fixed discount amount. |
+| `[MP_COUPON_VALID_TO]` | The expiration date when **Number Days** is set. |

@@ -3,17 +3,9 @@ title: 'Newsletter Integrations'
 published: true
 ---
 
-**Payment Form** integrates with popular newsletter and email marketing platforms, allowing you to automatically add customers who complete payments through your forms to your mailing lists.
+Use Payment Form to subscribe customers to your mailing lists automatically when their payments succeed. Both plugins are included in the Payment Form package. Enable the plugin you need in Joomla, then choose the subscription destinations for each form.
 
-These integrations make it easier to build and manage your subscriber lists, organize contacts, and communicate with customers through targeted email campaigns and newsletters.
+- [AcyMailing](/newsletter-integrations/payment-form-acymailing) subscribes customers to lists managed by AcyMailing on your Joomla site.
+- [Mailchimp](/newsletter-integrations/payment-form-mailchimp) adds customers to selected audiences and can assign them to groups and apply tags within those audiences.
 
-Currently, Payment Form supports the following integrations:
-
-- **AcyMailing:** Integrate with AcyMailing, a Joomla newsletter and email marketing extension, to automatically subscribe customers to selected mailing lists when they complete a payment.
-- **Mailchimp:** Integrate with Mailchimp to add customers to selected Audiences, Groups, and Tags, making it easier to organize contacts and create targeted email campaigns.
-
-Select an integration below to learn how to enable and configure it.
-
-[**AcyMailing Integration**](/newsletter-integrations/payment-form-acymailing)
-
-[**Mailchimp Integration**](/newsletter-integrations/payment-form-mailchimp)
+Both plugins use the email address saved with the payment. For offline payments, the integration runs when an administrator marks the payment as **Paid**. See [Approve Payments](/payments-management/approve-payments).

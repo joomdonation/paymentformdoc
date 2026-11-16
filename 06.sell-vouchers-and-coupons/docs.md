@@ -2,34 +2,36 @@
 title: 'Sell Vouchers & Coupons'
 ---
 
-**Payment Form** provides a convenient solution for selling vouchers and discount coupons for other Joomla extensions. With the help of dedicated integration plugins, you can sell vouchers through **Payment Form** and automatically generate corresponding voucher or coupon codes in the supported extensions whenever a customer completes a payment.
+Use Payment Form to sell codes that customers can redeem in Events Booking, EShop, or Membership Pro. When a payment succeeds, the integration plugin creates the code in the extension that accepts it. You can email the code to the payer or send it directly to a gift recipient.
 
-This makes it easy to create a voucher-selling system without developing a separate e-commerce solution. Customers can purchase vouchers through your Payment Form, and the generated voucher or coupon codes can be delivered automatically by email.
+| Where customers redeem the code | Setup guide |
+| --- | --- |
+| During event registration in Events Booking | [Events Booking vouchers](/sell-vouchers-and-coupons/payment-form-events-booking-voucher) |
+| At checkout in EShop | [EShop vouchers](/sell-vouchers-and-coupons/payment-form-eshop-voucher) |
+| When subscribing to a plan in Membership Pro | [Membership Pro coupons](/sell-vouchers-and-coupons/payment-form-membership-pro-coupon) |
 
-### How It Works
+## Set up a form to sell codes
 
-The process is straightforward:
+1. Install Payment Form and the extension that will accept the code on the same Joomla site. The three integration plugins are included in the Payment Form package. Enable the one you need under **System → Plugins**.
+2. [Create a payment form](/basic-setup/forms/add-new-form) and set the purchase price and payment methods.
+3. In the form editor, open the integration's settings tab and enable code generation. It defaults to **No**. Repeat this step for each form that sells codes.
+4. Configure the email that should contain the code, then [display the form on your site](/frontend-items/display-a-single-form).
 
-1. Create a payment form for selling vouchers.
-2. Customers complete the form and make a payment.
-3. Once the payment is completed, Payment Form automatically generates a voucher or coupon code in the corresponding Joomla extension.
-4. The generated code is sent to the customer by email. Alternatively, you can allow customers to enter the recipient's name and email address in the form and send the voucher code directly to that recipient.
+In the integration tab, you can set the code's value independently of the purchase price. For example, charge 50 for a voucher worth 60. Leave the code amount blank to use the payment amount. The plugin uses the gross amount when it is positive and falls back to the recorded total. The resulting code value must be greater than zero.
 
-You can also configure a fixed voucher or coupon value instead of using the actual payment amount. Depending on the integration, you can optionally specify an expiration period for generated codes.
+Set **Number Days** in the plugin to expire codes a set number of days after creation. This setting applies to every form using the plugin. Leave it blank for no expiration.
 
-### Supported Integrations
+If you upgraded from a version that used a **Form Ids** list in the plugin, check that generation is enabled in the integration tab on each of those forms.
 
-Payment Form currently supports the following voucher and coupon integrations:
+## Email the code to the payer or a gift recipient
 
-- **Events Booking:** Sell vouchers that customers can redeem for discounts when registering for events.
-- **EShop:** Sell gift vouchers that customers can use to receive discounts when purchasing products.
-- **Membership Pro:** Sell discount coupons that customers can use when purchasing memberships.
+**Email the payer.** For online payments, edit the form and add the integration's code tag to **Messages → User Email Body**. For offline payments, add the tag to **Payment Approved Email Body** under **Payment Form → Configuration → Messages**. The code is generated when you [approve the offline payment](/payments-management/approve-payments).
 
-Select an integration below to learn how to enable and configure the corresponding plugin.
+**Email a gift recipient.** Add a separate [Email custom field](/basic-setup/custom-fields/add-new-custom-field) to the form for the recipient's address. In the integration plugin, select that field and enter the notification subject and body. Include the code tag in the body. The plugin sends this separate message when the field contains a valid email address and both the subject and body are filled in. To address the recipient by name, add a custom field for their name and use its field tag in the message. For delivery only to the recipient, include the code tag only in the plugin's recipient email.
 
-[**Sell Events Booking Vouchers**](/sell-vouchers-and-coupons/payment-form-events-booking-voucher)
+## Test the purchase and redemption
 
-[**Sell EShop Vouchers**](/sell-vouchers-and-coupons/payment-form-eshop-voucher)
+Complete a test payment through the published form. For an offline payment, approve it after submission. Confirm that the code appears in the target extension, that the intended recipient receives it, and that the code works in an eligible registration, order, or subscription.
 
-[**Sell Membership Pro Coupon**](/sell-vouchers-and-coupons/payment-form-membership-pro-coupon)
+If the integration tab is missing, check that the plugin is enabled and the target extension is installed. If the payment is marked **Paid** but the email contains no code, check whether the code was created in the target extension. If it was, verify that the email template for that payment type contains the correct tag. If it was not, check that generation is enabled for the form and the code value is greater than zero.
 
