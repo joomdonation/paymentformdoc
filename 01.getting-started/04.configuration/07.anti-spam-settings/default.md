@@ -16,7 +16,8 @@ Payment Form includes built-in spam protection. Open the **Anti-Spam Settings** 
     ```
 
 - **Minimum Form Time (in Seconds)** sets how long visitors must wait before submitting a form. A minimum of 1 or 2 seconds can block automated submissions. Signed-in customers may also submit quickly if the form is prefilled from a previous submission. Leave this setting blank if you are unsure what minimum to use.
-- **Maximum Form Submissions Per Session** limits how many times a visitor can submit the same form in one session. For example, set it to `10` to allow up to 10 submissions per session.
-- **Minimum Payment Amount** blocks submissions below the amount you specify. For example, set it to `5` to block payments smaller than 5 in the form's currency.
+- **Force Form Time Check** rejects submissions that lack the form's timing field. It applies when **Minimum Form Time (in Seconds)** is greater than zero. If you use an older template override, make sure it includes the timing field before enabling this setting.
+- **Maximum Form Submissions Per Session** limits submissions across all Payment Form forms in the same visitor session. For example, a limit of `10` allows up to 10 submissions in total. Leave it blank or set it to `0` to disable the limit.
+- **Minimum Payment Amount** applies to the final total, after any discounts, taxes, and fees. For example, setting it to `5` blocks totals below 5 in the form's currency. Leave it blank or set it to `0` if you accept zero-amount or information-only submissions.
 
 ![Anti-spam settings](anti-spam-settings.png "anti-spam-settings")
