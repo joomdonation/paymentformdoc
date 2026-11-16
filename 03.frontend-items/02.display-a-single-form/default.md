@@ -3,32 +3,40 @@ title: 'Display a Single Form'
 media_order: 'menu_item_types.png,Payment-Form-Form-Module.png'
 ---
 
-Payment Form has different options to show form to users: Through menu item, embed form in a Joomla article or use module to display form in a module position on your site. Find out how to use these options in sections below:
+Give a form its own page when visitors need a direct link to it. Use a module to put the form in a template position on an existing page, or embed it in an article to place it alongside the instructions visitors need to fill it in.
 
-## Use menu item
+## Give a form its own page
 
-You can create a menu item to link to one of menu item types below of Payment Form to display a single form. However, we recommend to use **Form Modern Layout** menu item type, all other menu item types were using in old days and will be removed in the future. For layout examples and setup instructions, see [Modern Form Layouts](/basic-setup/forms/modern-form-layouts).
+For example, create a **Pay Membership Dues** menu item so members can go straight to the payment form from your site's navigation.
 
-
-| Menu item type | Layout |
-| --- | --- |
-| **Form Modern Layout** | Recommended. Configure field columns, label placement, or a custom grid. |
-| **Form Default Layout** | Display the form with the default layout. |
-| **Inline Form Layout** | Display the form with the inline layout. |
-| **2 Columns 2 Lines** | Display fields in two columns with labels above the inputs. |
-| **2 Columns Inline** | Display fields in two columns with labels beside the inputs. |
-
+1. In the Joomla administrator area, open **Menus**, select the site menu where the link should appear, and click **New**.
+2. Enter a **Menu Title**. Under **Menu Item Type**, click **Select** and choose **Payment Form → Form Modern Layout**.
+3. In **Form**, select the form you want to display.
+4. Leave **Number Columns**, **Form Format**, and **Show Fields Label** set to **Use Default** to inherit the form's settings, or change them for this menu item. See [Modern Form Layouts](/basic-setup/forms/modern-form-layouts) for examples.
+5. Set **Status** to **Published**, choose the menu item's **Access** level, and save. Open the new page and check the form as a visitor would see it.
 
 ![Payment Form menu item types in Joomla](menu_item_types.png)
 
-## Embed the form in a Joomla article
-The **Content - Payment Form** plugin allows you to embed a form in a Joomla article. If you want to have that behavior, follow the instructions below to setup:
+Use **Form Default Layout** when the page should follow the **Form Layout** selected in the form editor, including a custom layout. The **Inline Form Layout**, **2 Columns 2 Lines**, and **2 Columns Inline** menu item types are also available for existing setups.
 
-1. Go to **System → Plugins**, find and  and enable **Content - Payment Form** plugin.
-2. Open the Joomla article and enter `{pmform FORM_ID}` where you want the form to appear. Replace `FORM_ID` with the ID of the form. For example, `{pmform 2}` displays form with ID =  2. Use exactly one space between `pmform` and the ID.
-3. Save the article.
+## Show a form in a module position
 
-## Show the form in a module position
-If you want to display a form in a module position on your site, access to System -> Site Modules, press new button in the toolbar to create an instance of **Payment Form - Form** module, select Form, choose position, assign it to the pages/menu items you want and publish it.
+Use **Payment Form - Form** when visitors should be able to fill in the form directly from an existing page, such as a short donation form on your homepage.
 
-![Payment-Form-Form-Module](Payment-Form-Form-Module.png "Payment-Form-Form-Module")
+1. Go to **System → Site Modules**, click **New**, and select **Payment Form - Form**.
+2. Enter a module title and select the form in **Form**.
+3. Choose a **Position** in your site template. On **Menu Assignment**, choose the pages where the form should appear.
+4. Set **Status** to **Published**, choose the module's **Access** level, and save. Open an assigned page and check that the form fits the position on desktop and mobile.
+
+![Payment Form - Form module settings](Payment-Form-Form-Module.png)
+
+## Embed a form in a Joomla article
+
+Use **Content - Payment Form** when the form belongs within the article body, such as below workshop details and registration instructions.
+
+1. Go to **System → Plugins** and enable **Content - Payment Form**.
+2. Open **Components → Payment Form → Forms** and find the numeric **ID** of your form in the list.
+3. Open the Joomla article and enter `{pmform FORM_ID}` on its own line where you want the form to appear. Replace `FORM_ID` with the numeric ID. For example, `{pmform 2}` displays form 2. Use one space between `pmform` and the ID.
+4. Save the article and open it on your site. If the tag appears as text, check that the plugin is enabled and the tag matches the example.
+
+For forms displayed through a module or article, set the layout in the form editor. If the form requires sign-in, set the menu item, module, or article to an access level that matches the intended audience. Once the form appears, [test a submission from that page](/basic-setup/forms/customize-form#test-the-form-on-your-site).

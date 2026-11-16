@@ -1,32 +1,39 @@
 ---
-title: 'Display List of Forms'
+title: 'Display a List of Forms'
 taxonomy:
     category:
         - docs
 media_order: 'Payment-Form-Forms-List.png,Payment-Form-Forms-List-Module.png'
 ---
 
-Payment Form has different options to display list of forms to allow users to select the form they want to process payment. 
+Visitors can open a payment form by clicking its title in either list.
 
-## Use Forms List menu item type
-The Forms List menu item type displays a browsable list of payment forms on your Joomla site. This view presents multiple forms in a structured table format, allowing users to see available options and select which form they want to access. It acts as a central hub for all your payment forms, making it easy for visitors to discover and choose the appropriate form for their needs.
+## Create a Forms List page
 
-The forms list automatically displays key information about each form, including the form title, and optionally the payment amount. Users can click on any form in the list to navigate to that specific form's page.
+Use a dedicated page when visitors need to choose what to pay for. For example, a **Club Payments** page could list forms for annual dues, event fees, and donations.
 
-To use this option, please create a menu item to link to **Form List** menu item type of **Payment Form**.  The menu item type has follow parameters:
-- **Forms**: Allow you to select only certain forms to display. If no forms are selected, all published forms will be displayed.
-- **Show Amount Columns**: Determine whether the Amount column will be displayed. It is off by default, normally, you should only set it to Yes if all the forms displayed here have fixed payment amount.
-- **Intro Text**: Allow you to enter the text you want to display above the list of form.
+1. In the Joomla administrator area, open **Menus**, select the site menu where the link should appear, and click **New**.
+2. Enter a **Menu Title**. Under **Menu Item Type**, click **Select** and choose **Payment Form → Forms List**.
+3. Configure the list using the settings below. Set **Status** to **Published**, choose the menu item's **Access** level, and save.
+4. Open the new page on your site and click each title to verify that it opens the expected form.
 
-![Payment-Form-Forms-List](Payment-Form-Forms-List.png "Payment-Form-Forms-List")
+| Setting | What it controls |
+| --- | --- |
+| **Forms** | Select the forms for this page, or leave the selection empty to include all available forms. |
+| **Show Amount Columns** | Controls the **Amount** column, which shows the base amount saved on each form. The setting defaults to **Yes**. Choose **No** for a list of donations, payer-entered amounts, or other forms where the total is determined when the visitor fills in the form. Check the page after saving to confirm that the column appears as intended. |
+| **Intro Text** | Appears above the table. Use it to explain which form visitors should choose. |
 
-## Use Payment Form - Forms List module
-The other option to display list of forms is using **Payment Form - Forms List** module. In this case, the forms will be displayed in a module position of your site template. 
+![Forms List page showing linked form titles below the introductory text](Payment-Form-Forms-List.png)
 
-If you want to use this option, create an instance of **Payment Form - Forms List** module and assign it to the module position you want. The module has following parameters:
+## Show form links in a module position
 
-- **Forms**: Select the forms you want to display in this module. If no forms are selected, all publish forms will be displayed
-- **Number Forms**: Determine how many forms will be displayed in the module.
+Use the module for a compact list of links on one or more existing pages. For example, place links to your payment forms in the sidebar of a member information page.
 
-![Payment-Form-Forms-List-Module](Payment-Form-Forms-List-Module.png "Payment-Form-Forms-List-Module")
+1. Go to **System → Site Modules**, click **New**, and select **Payment Form - Forms List**.
+2. Enter a module title. Under **Forms**, select the forms to include or leave the selection empty. Set **Number Forms** to the maximum number of links to show. The default is **10**.
+3. Choose a **Position** in your site template. On **Menu Assignment**, choose the pages where the list should appear.
+4. Set **Status** to **Published**, choose the module's **Access** level, and save. Visit an assigned page to check the list and its links.
 
+![Forms List module with a bulleted list of links](Payment-Form-Forms-List-Module.png)
+
+Both lists show only published forms within their publishing dates that the visitor has permission to open. If a form is missing, check its [publishing and access settings](/basic-setup/forms/add-new-form#general) and the **Forms** selection. For the module, also check **Number Forms** and **Menu Assignment**.
