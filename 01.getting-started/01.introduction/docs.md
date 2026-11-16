@@ -34,15 +34,12 @@ Payment Form is a Joomla extension that lets you create custom forms, collect in
 
 - **Main component (`com_pmform`).** Manage Payment Form in the Joomla administrator area and display forms on your site.
 - **Two modules.** Display payment forms and form lists in module positions.
-- **16 plugins.** Add integrations, automation, and other features.
+- **Joomla plugins.** Add integrations, automation, and other features.
 - **Two libraries.** Provide the MVC framework and payment processing support.
 
 ## System Requirements
 
-- **Joomla** 4.4.0 or later, with maintenance-only support for Joomla 3
-- **PHP** 7.4.0 or later
-- **Web server** running Apache with `mod_rewrite` enabled or Nginx
-- **Database** running MySQL 5.6 or later, or MariaDB 10.0 or later
+Payment Form runs on Joomla 4.4 or later, including Joomla 5 and 6. Check the [Requirements](/getting-started/requirements) for PHP, database, and web server compatibility.
 
 ## About This Manual
 

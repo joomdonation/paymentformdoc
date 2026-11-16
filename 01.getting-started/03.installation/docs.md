@@ -23,6 +23,8 @@ After installation, Joomla opens the Payment Form dashboard, where you can start
 
 ![Payment Form dashboard](dashboard.png)
 
+Follow the [Quick Start](/getting-started#quick-start) to configure and test your first form.
+
 ## Install the CB Payment History plugin
 
 If your site uses Community Builder, you can install the optional CB Payment History plugin through Community Builder's plugin manager.
@@ -36,13 +38,13 @@ If your site uses Community Builder, you can install the optional CB Payment His
 
 ## Install Sample Data
 
-On a new installation, you can use the sample data from our demo site to see how Payment Form is set up. Log in to the Joomla administrator area and open the following URL.
+Use the sample data on a test site to explore example forms and fields. Payment Form imports sample data only when there are no existing forms. Log in to the Joomla administrator area as a Super User and open the following URL.
 
 `https://domain.com/administrator/index.php?option=com_pmform&task=tool.setup_sample_data`
 
 Replace `https://domain.com/administrator` with the URL of your site's Joomla administrator area.
 
-### Update
+## Update
 
 You can update Payment Form using Joomla's extension updater.
 
@@ -57,12 +59,15 @@ Use a unique Download ID for each site. You can use that site's Download ID for 
 
 If you need to update Payment Form manually, download the latest version from [My Downloads](https://joomdonation.com/my-downloads.html) and follow the installation steps above to install the new package.
 
-## Move data from one site to a new site
+## Move Payment Form data to another site
 
-1. In phpMyAdmin, export the Payment Form tables from the old site's database. Their names start with the Joomla database prefix followed by `pf_`.
-2. If the sites use different database table prefixes, open the exported SQL file in a text editor and change the prefixes in the table names to match the new site.
-3. Use phpMyAdmin to import the tables into the new site's database.
-4. Reinstall the latest version of Payment Form on the new site to update the database schema.
+Use these steps when the destination site has no Payment Form data you need to keep. Back up both sites' databases and files before migrating.
+
+1. In phpMyAdmin, export the Payment Form tables from the source site's database. Their names start with the Joomla database prefix followed by `pf_`.
+2. If the sites use different database table prefixes, change the table names in the export to match the destination site's prefix.
+3. Import the tables into the destination database and install or reinstall the latest Payment Form package to update the database schema.
+4. If you use file uploads, copy the directory set in [File Upload Path](/getting-started/configuration/general#file-uploads). Copy any saved invoices from `media/com_pmform/invoices` and custom email attachments from `media/com_pmform` to the same locations on the destination site. Install any additional payment plugins the forms use.
+5. Check your Joomla menu items, modules, and payment plugin settings on the destination site. Customer payment history uses Joomla user IDs, so verify that imported payments are linked to the correct accounts before enabling payment history. Submit a test payment to verify the setup.
 
 ## Uninstall
 

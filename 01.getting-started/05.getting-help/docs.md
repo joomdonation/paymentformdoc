@@ -23,4 +23,8 @@ ___
 
 ___
 
->>>>> To report a bug, submit a support ticket. Include the details for a Super User account on your site so we can investigate. We may need to edit the extension's code on your server to resolve the issue.
+## Report a bug
+
+Submit a support ticket with your Joomla and Payment Form versions, the affected form or page, and the steps to reproduce the issue. Include the exact error message or a screenshot if one is available. For a payment issue, include the payment method and the payment status shown in Payment Form.
+
+If we need site access, we'll request it in the support ticket. Use a temporary account and remove it when the issue is resolved.
