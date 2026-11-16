@@ -2,27 +2,16 @@
 title: 'Information Collection Form'
 ---
 
-Use this form type to collect registrations, requests, surveys, or other information without charging the payer. When the final amount is zero and the form has no fee fields, Payment Form submits the record without displaying payment methods.
-
-## Example: event interest form
-
-Create a form named **Event Interest Form** and add fields such as **First Name**, **Last Name**, **Email**, **Organization**, and **Comment**. The payer can submit their information, and administrators can review or export the resulting records.
+Use this setup for free registrations, enquiries, or surveys. For example, an **Event Interest Form** could ask for the visitor's name, email address, organization, and a comment.
 
 ## Setup
 
-1. Create a form and set **Amount** to `0` or leave it empty.
-2. Do not assign the built-in **Amount** field to the form.
-3. Do not enable **Fee Field** on any custom field assigned to the form.
-4. Assign the information fields you need and mark essential fields as required.
-5. Set the form's notification emails if submissions should be sent to a different team.
-6. Publish the form.
+1. [Create the form](/basic-setup/forms/add-new-form) and set **Amount** to `0`. Leave **Late Payment Date** blank.
+2. [Assign the fields](/basic-setup/forms/customize-form#choose-the-fields-to-display) you want and mark essential fields as required. Use fields with **Fee Field** disabled and leave the built-in **Amount** field unassigned.
+3. In **Messages**, set **Thank You Message** to confirm receipt. To notify a different team, enter their addresses under **Advanced Settings → Notification Emails**.
+4. Leave **Minimum Payment Amount** blank or set it to `0` under **Configuration → Anti-Spam Settings** so this form can accept a zero total. Use [Validate Payment Amount](/plugins/validate-payment-amount) to set a minimum on individual forms that need one.
+5. [Display the form](/frontend-items/display-a-single-form) and test a submission.
 
 ## Result
 
-The form displays a **Submit** button. It stores the submitted information as a payment record with a zero amount, but does not ask the user to select a payment method or visit a payment gateway.
-
-## Useful additions
-
-- Use [Field Dependencies](/basic-setup/custom-fields/field-dependencies) to display follow-up questions only for relevant selections.
-- Use the **Messages** tab on the form to provide a submission confirmation specific to this form.
-- Restrict the form with **Access** when it is intended for registered users or a specific Joomla user group.
+Visitors submit the form directly on your site. Payment Form stores each submission as a zero-amount record in **Payments**, where administrators can review or export it. If **Show Confirmation Step** is enabled, visitors review their details before submitting.

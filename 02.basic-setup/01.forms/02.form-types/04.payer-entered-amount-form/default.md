@@ -3,34 +3,24 @@ title: 'Payer-Entered Amount Form'
 published: true
 ---
 
-Use this form type when the payer chooses the amount to pay. It works well for donations, invoice payments, deposits, and other payments where the administrator does not set one fixed price.
-
-## Example: donation form
-
-The form collects the donor's name, email address, and donation amount. If the donor enters 25, the payment total is 25 before any configured tax or payment-method fee.
+Use this setup for donations, deposits, or invoice payments where the payer enters the amount. In the example below, a donor who enters 25 pays a base total of 25 before any configured adjustments.
 
 ## Setup with the built-in Amount field
 
-1. Create a form named **Make a Donation**.
-2. Set the form's **Amount** to `0` or leave it empty.
-3. Assign the built-in **Amount** field to this form.
-4. Edit the **Amount** field and confirm that **Fee Field** is **Yes** and **Fee Formula** is `[FIELD_VALUE]`.
-5. Make the field required if a payer must enter an amount.
-6. Select the payment methods in the form's **Advanced Settings**.
-7. Test the form with several amounts before publishing it.
+1. [Create a form](/basic-setup/forms/add-new-form) named **Make a Donation** and set its **Amount** to `0`.
+2. In **Custom Fields**, open the built-in **Amount** field. Check that it is published and [assigned to the form](/basic-setup/forms/customize-form#choose-the-fields-to-display).
+3. Confirm that **Fee Field** is **Yes** and **Fee Formula** is `[FIELD_VALUE]`. Set **Required** to **Yes** if the payer must enter an amount.
+4. Assign the donor's name and email fields, then select the payment methods under **Advanced Settings → Payment Methods** in the form editor.
+5. [Display the form](/frontend-items/display-a-single-form) and test with several amounts, including a decimal amount if you accept one.
 
 ## Use a separate amount field
 
-You can create a dedicated **Number** field instead of using the built-in **Amount** field. For example, create a field named `donation_amount`, set **Fee Field** to **Yes**, and use this formula:
+To give this form its own label or input limits, create a **Number** field titled **Donation Amount** with the name `donation_amount`. Assign it to this form, set **Fee Field** to **Yes**, and enter `[FIELD_VALUE]` in **Fee Formula**. Use **Min**, **Max**, and **Step** to control the input. For example, set **Step** to `0.01` to allow amounts in cents. Use one amount field on the form so the entered amount is added once.
 
-```text
-[FIELD_VALUE]
-```
-
-Use a **Number** field when possible, and set a minimum value if the payment must meet a minimum amount.
+To require a positive payment or enforce a minimum on the final total for this form, use the [Validate Payment Amount](/plugins/validate-payment-amount) plugin. A required field can still have a value of `0`.
 
 ## Result
 
-The field value becomes a custom fee. Since the base form amount is zero, the fee is the payment total. You can still add a fixed base amount or additional fee fields if the payment flow requires them.
+The amount field adds the value the payer enters. With a base amount of `0` and no other fees, this value is the form subtotal.
 
 For formula behavior and numeric input rules, see [Custom Fee Fields](/basic-setup/custom-fields/custom-fee-fields).

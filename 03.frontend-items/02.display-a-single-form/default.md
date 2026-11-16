@@ -7,7 +7,7 @@ Payment Form has different options to show form to users: Through menu item, emb
 
 ## Use menu item
 
-You can create a menu item to link to one of menu item types below of Payment Form to display a single form. However, we recommend to use **Form Modern Layout** menu item type, all other menu item types were using in old days and will be removed in the future. For layout examples and setup instructions, see [Modern Form Layouts](/basic-setup/forms/form-layouts).
+You can create a menu item to link to one of menu item types below of Payment Form to display a single form. However, we recommend to use **Form Modern Layout** menu item type, all other menu item types were using in old days and will be removed in the future. For layout examples and setup instructions, see [Modern Form Layouts](/basic-setup/forms/modern-form-layouts).
 
 
 | Menu item type | Layout |

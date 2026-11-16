@@ -3,34 +3,27 @@ title: 'Option-Priced Payment Form'
 published: true
 ---
 
-Use this form type when the payer chooses a ticket, plan, product, or add-on and each choice has a known price. Payment Form maps the selected option to the matching line in **Fee Values**.
+Use this setup when each ticket, plan, product, or add-on has its own price. Payment Form adds the fees for the options the payer selects.
 
-## Example: conference registration
+## Example conference registration
 
-The form has a required ticket-type field and optional add-ons:
+Create a required **Ticket Type** field and an optional **Add-ons** field. The table shows what to enter for each option.
 
-| Field | Type | Selected option | Added fee |
+| Field | Options Value | Options Text | Fee Values |
 | --- | --- | --- | ---: |
-| Ticket Type | Radio | Standard ticket | 120 |
-| Add-ons | Checkboxes | Workshop | 50 |
-| Add-ons | Checkboxes | Lunch | 15 |
+| Ticket Type | `standard` | Standard ticket (+120) | `120` |
+| Ticket Type | `premium` | Premium ticket (+180) | `180` |
+| Add-ons | `workshop` | Workshop (+50) | `50` |
+| Add-ons | `lunch` | Lunch (+15) | `15` |
 
-If the payer chooses a Standard ticket and both add-ons, the form total is 185 before discounts, tax, and payment-method fees.
+With a base amount of `0`, a Standard ticket and both add-ons give a subtotal of `120 + 50 + 15 = 185`.
 
 ## Setup
 
-1. Create the form and set its **Amount** to `0` when all pricing comes from selections. Enter a base amount if every payer should also pay a fixed fee.
-2. Add a **Radio** or single-select **List** field for the required choice, such as ticket type.
-3. Enter one stored option per line in **Options Value**, for example `standard`, `premium`, and `vip`.
-4. Enter matching labels in **Options Text**, such as `Standard Ticket (+120)`.
-5. Set **Fee Field** to **Yes** and enter the corresponding amounts in **Fee Values**, one per line in the same order.
-6. Add **Checkboxes** or a multiple-select **List** for optional add-ons, following the same value-to-fee mapping.
-7. Choose payment methods, publish the form, and test every selection combination.
-
-## How Payment Form calculates it
-
-- A **Radio** field or single-select **List** adds the fee for one selected option.
-- **Checkboxes** and a multiple-select **List** add the fees for all selected options.
-- Each line in **Fee Values** belongs to the option on the same line in **Options Value**. Keep the lists in the same order.
+1. [Create the form](/basic-setup/forms/add-new-form) and set **Amount** to `0`. Enter a base amount if every payer should also pay a fixed fee.
+2. In **Custom Fields**, create **Ticket Type** as a **Radio** field or a **List** with **Multiple** set to **No**. Set **Required** to **Yes**.
+3. Create **Add-ons** as a **Checkboxes** field or a **List** with **Multiple** set to **Yes**. Set **Required** to **No** and leave **Default Values** blank if add-ons should start unselected.
+4. Assign both fields to this form and set **Fee Field** to **Yes**. For each field, enter one line per option in **Options Value**, **Options Text**, and **Fee Values**. Keep the lines in the same order and leave **Fee Formula** blank.
+5. Select the form's payment methods. [Display the form](/frontend-items/display-a-single-form) and check the total for each ticket, with and without add-ons.
 
 Use [Custom Fee Fields](/basic-setup/custom-fields/custom-fee-fields) for a complete configuration example.

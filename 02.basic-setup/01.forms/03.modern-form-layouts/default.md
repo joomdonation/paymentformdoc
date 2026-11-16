@@ -4,13 +4,18 @@ published: true
 media_order: 'custom-field-grid.png,hidden-field-labels.png,horizontal-form-format.png,stacked-form-format.png,two-column-horizontal.png,two-column-stacked.png'
 ---
 
-In Joomla, go to **Components → Payment Form → Forms**, open your form, and select **Modern** under **Form Layout** on the **General** tab.
+In the Joomla administrator area, open **Components → Payment Form → Forms**, select your form, and set **Form Layout** to **Modern** on the **General** tab. The layout uses the CSS framework selected in [Configuration](/getting-started/configuration/general#general-settings). Use the setting that matches your site template.
 
-Use **Form Format** to place each label beside its input (**Horizontal**) or above it (**Stacked**). Use **Number Columns** to control how many fields share a row. You can combine either label format with any column layout.
+| What you want to change | Setting |
+| --- | --- |
+| Whether labels sit beside or above the inputs | Set **Form Format** to **Horizontal** or **Stacked**. |
+| How many equal-width fields share a row | Set **Number Columns** to **2**, **3**, or **4**. This overrides each field's **Container Size**. |
+| Separate widths for individual fields, including full-width rows | Set **Number Columns** to **Default - Use Field Container Size**, then set **Container Size** for each field under **Custom Fields → Display Settings**. |
+| Which labels are visible | Set **Show Fields Label** to **Yes** or **No** for the entire form. To control labels individually, choose **Use Field Setting** and edit **Show Field Label** on the relevant fields. |
 
-## Choose a layout
+## Layout examples
 
-For the first five examples, set **Show Fields Label** to **Yes**. In the examples below, **Default** means **Default - Use Field Container Size** in the **Number Columns** list.
+The first five examples keep the labels visible. In these examples, **Default** is short for **Default - Use Field Container Size** in the **Number Columns** list.
 
 ### One column with labels beside inputs
 
@@ -38,7 +43,7 @@ Keep **Number Columns** at **2** and change **Form Format** to **Horizontal**. E
 
 ### Custom grid with mixed field widths
 
-Set **Number Columns** to **Default** and **Form Format** to **Stacked**. Edit each field's **Container Size** and arrange the fields in the order shown below. Choose widths that add up to a full row.
+Set **Number Columns** to **Default** and **Form Format** to **Stacked**. In each field's **Display Settings**, set **Container Size** to the width shown below. Use the **Custom Fields** list to put the fields in display order. Choose widths that add up to a full row where you want the next field to start on a new row.
 
 | Row | Fields in display order |
 | --- | --- |
@@ -50,17 +55,18 @@ Set **Number Columns** to **Default** and **Form Format** to **Stacked**. Edit e
 
 ### Custom grid with hidden labels
 
-Keep the custom grid settings above and set **Show Fields Label** to **No**. The field widths stay the same. To show hints such as “First Name” and “Address” inside empty text inputs, enter them in the **Place Holder** setting for each field. The country dropdown in this example shows its selected value.
+Keep the custom grid and set **Show Fields Label** to **No**. To show hints such as “First Name” and “Address” inside empty text inputs, enter the hint in the field's **Place Holder** setting. The country dropdown in this example shows its selected value.
 
 ![The same address grid with placeholders inside the text inputs and United States selected in the country dropdown](hidden-field-labels.png)
 
-Placeholders disappear as users type. Keep visible labels where users need to refer back to them, or keep labels visible on selected fields with **Use Field Setting**.
+Placeholders disappear as users type. Choose **Use Field Setting** to keep labels visible where users need them, especially on dropdowns, radio buttons, and checkbox groups where the options alone may leave the question unclear.
 
-## How the settings work together
+## Move fields within the form
 
-- **Number Columns** set to **2**, **3**, or **4** gives each field an equal share of the row and overrides individual **Container Size** settings. Choose **Default - Use Field Container Size** to set widths field by field.
-- **Container Size** is set in the custom field editor. The options are **Full Width**, **1/2**, **1/3**, **2/3**, **1/4**, **2/4**, and **3/4**. **1/2** and **2/4** use the same width.
-- **Show Fields Label** set to **Yes** or **No** applies to all custom field labels. Choose **Use Field Setting** to follow the **Show Field Label** option in each field's settings.
-- **Position** still controls where a field appears. Fields set to **Below Payment Amount** or **Below Payment Method** stay in their assigned sections and also use the width set by **Number Columns** when you choose **2**, **3**, or **4**.
+In the custom field's **Display Settings**, use **Position** to move it from the main group of fields to **Below Payment Amount** or **Below Payment Method**. Keep fields that a visitor always needs to see in **Default**, since **Below Payment Amount** appears only when the form displays the amount section. The column settings apply to custom fields in these positions as well.
 
-If the published form looks different, check whether its Joomla menu item overrides **Number Columns**, **Form Format**, or **Show Fields Label**. The illustrations show the layouts on a wide screen. Preview your form on a phone too, since the site template and available space can affect how fields fit.
+## Check Joomla menu item settings
+
+If the form looks different on the site, check the Joomla menu item that [displays the form](/frontend-items/display-a-single-form). A **Form Modern Layout** menu item uses the Modern layout for that page and can override **Number Columns**, **Form Format**, and **Show Fields Label**. Select **Use Default** for these settings to inherit the values from the form. A **Form Default Layout** menu item follows the layout selected in the form editor.
+
+Preview the same page on a phone and a desktop. The screenshots show the layout on a wide screen. How fields fit at smaller widths depends on your template and CSS framework.
