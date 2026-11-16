@@ -7,61 +7,48 @@ taxonomy:
 
 ## What is Payment Form?
 
-Payment Form is a comprehensive Joomla extension that enables website administrators to create customizable payment forms, collect user information, and process payments through multiple payment gateways. Whether you need to collect donations, accept event registrations, sell products, or process any type of online payment, Payment Form provides the tools to build and manage your payment collection process.
+Payment Form is a Joomla extension that lets you create custom forms, collect information, and accept payments on your website. You can use it to collect donations, accept event registrations, or sell products.
 
 ## Key Capabilities
 
-Payment Form allows you to:
-
-- **Create Unlimited Payment Forms**: Build as many payment forms as you need for different purposes
-- **Collect Custom Information**: Design forms with custom fields to gather the exact information you require
-- **Process Payments**: Accept payments through multiple (70+) payment gateways including PayPal, Stripe, Mollie, Authorize.net, eWay, Moneybooker, and offline methods and many more....
-- **Manage Payment Records**: View, add, edit, search, filter, and export all payment transactions. Refund payments directly from administrator area of your site.
-- **Offer Discounts**: Create and manage coupon codes for percentage or fixed amount discounts
-- **Send Automated Emails**: Configure custom email notifications for customers and administrators
-- **Generate PDF Invoices**: Automatically create and send professional PDF invoices
-- **Auto-fill Fields**: Populate form fields automatically from user profiles (Joomla, Membership Pro, Community Builder or Jomsocial) to speed up payment process
-- **Newsleter Integrations**: Assign users to ACYMailing, MailChimp lists upon payment completion for sending newsleter later.
+- **Create unlimited payment forms.** Build as many forms as you need for different purposes.
+- **Collect information with custom fields.** Add fields for the information you need from customers.
+- **Process payments.** Choose from more than 70 payment options, including PayPal, Stripe, Mollie, Authorize.net, eWAY, Moneybookers, and offline payment methods.
+- **Manage payment records.** View, add, edit, search, filter, and export payment records. Issue refunds from the Joomla administrator area when the gateway supports them.
+- **Offer discounts.** Create coupon codes for fixed-amount or percentage discounts.
+- **Send automated emails.** Configure email notifications for customers and administrators.
+- **Generate PDF invoices.** Create and send PDF invoices automatically.
+- **Prefill form fields.** Save customers time by filling in fields with profile data from Joomla, Membership Pro, Community Builder, or JomSocial.
+- **Integrate with newsletter services.** Add customers to ACYMailing or Mailchimp after they complete a payment.
 
 ## Who Should Use Payment Form?
 
-Payment Form is designed for:
-
-- **Joomla Administrators**: Who need to set up and manage payment collection on their websites
-- **Site Builders**: Who are creating websites for clients that require payment functionality
-- **Organization Managers**: Who need to collect payments, donations, or registrations online
+- **Joomla administrators** who need to set up and manage payments on their sites.
+- **Site builders** who build websites that need to accept payments.
+- **Organization managers** who need to collect payments, donations, or registrations online.
 
 ## What's Included?
 
-The Payment Form package includes:
-
-- **Main Component** (com_pmform): The core payment form system with administrator backend and frontend display
-- **2 Modules**: Display payment forms and form lists in module positions
-- **16 Plugins**: Extend functionality with integrations, automation, and custom features
-- **2 Libraries**: Support libraries for MVC framework and payment processing
+- **Main component (`com_pmform`).** Manage Payment Form in the Joomla administrator area and display forms on your site.
+- **Two modules.** Display payment forms and form lists in module positions.
+- **16 plugins.** Add integrations, automation, and other features.
+- **Two libraries.** Provide the MVC framework and payment processing support.
 
 ## System Requirements
 
-To use Payment Form, you need:
-
-- **Joomla**: Version 4.4.0 or higher
-- **PHP**: Version 7.4.0 or higher
-- **Web Server**: Apache or Nginx with mod_rewrite enabled
-- **Database**: MySQL 5.6+ or MariaDB 10.0+
+- **Joomla** 4.4.0 or later, with maintenance-only support for Joomla 3
+- **PHP** 7.4.0 or later
+- **Web server** running Apache with `mod_rewrite` enabled or Nginx
+- **Database** running MySQL 5.6 or later, or MariaDB 10.0 or later
 
 ## About This Manual
 
-This user manual explains how to install, configure, and use the Payment Form extension. It covers:
-
-- Installation procedures
-- Configuration settings
+- Installing and configuring Payment Form
 - Creating and managing forms
 - Adding and configuring fields
 - Setting up payment gateways
 - Managing payment records
-- Using coupons
-- Plugin integrations
-- Frontend user features
-- Common workflows
+- Setting up coupons and plugin integrations
+- Using frontend features and following common workflows
 
 The manual assumes you are familiar with basic Joomla administration, including installing extensions, creating menu items, and managing content.

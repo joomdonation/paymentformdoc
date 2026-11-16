@@ -2,25 +2,25 @@
 title: 'Getting Help'
 ---
 
-When you setup and use Payment Form extension, if you have any questions or need supports from us, please use one of the following support chanels to get support from us:
+If you have questions about setting up or using Payment Form, you can reach us in several ways.
 
-1. Search [Payment Form forum](https://joomdonation.com/forum/payment-form.html) for the answer to your question. It is very likely that someone uses Payment Form before you had the same question, posted their question on forum and got it answered already. In case you could not find any forum topic has the answer you need, please open a new topic.
-2. Login to our website and submit a new ticket to **Payment Form** category: [https://joomdonation.com/support-tickets.html](https://joomdonation.com/support-tickets.html)
-3. Drop us an email to **services@joomdonation.com**
-4. Use Contact Form at our website: [https://joomdonation.com/contact-us.html](https://joomdonation.com/contact-us.html)
+1. Search the [Payment Form forum](https://joomdonation.com/forum/payment-form.html) for an answer. If you can't find one, start a new topic.
+2. Log in to our website and submit a ticket in the **Payment Form** category under [Support Tickets](https://joomdonation.com/support-tickets.html).
+3. Email us at **services@joomdonation.com**.
+4. Use the form on our [Contact Us page](https://joomdonation.com/contact-us.html).
 
-We will try to get back to you within 24 hours (or earlier) in weekday and in 48 hours during weekend.
+We aim to respond within 24 hours on weekdays and within 48 hours on weekends.
 
->>>>> If you send us an email (to services@joomdonatiom.com or via contact form) but didn't receive our response, it is very likely that we missed your email for some reasons. In that case, please do help by re-sending the email. We never ignore any customers, so it is un-usual that we don't reply your email / support request.
-
-___
-
->>>>> When you receive response from us via support ticket asking for more information, please do reply via support ticket. Please don't reply via email. We should keep communication in one place only. If you reply via email, we might miss your email (we receive so many emails per day) and might forgot to reply you.
+>>>>> If you haven't heard back after emailing us or using the contact form, please resend your message. We may have missed it.
 
 ___
 
->>>>> If your support request is related to how the extension work, please post it on forum. We will answer you directly on forum so that other customers can see the answer.
+>>>>> If we ask for more information, please reply in the support ticket so we can keep the conversation in one place.
 
 ___
 
->>>>> If your support request is related to a bug in the extension which you found, please submit support ticket, that's the prefered way. When you submit support ticket, you should include super admin account of your site to reduce the time. For a bug fixing support request, it is very likely that we will have to edit code directly on your server, so sending super admin account to us when you submit ticket will save time of both of us
+>>>>> For questions about how Payment Form works, please post in the forum so other customers can find the answer too.
+
+___
+
+>>>>> To report a bug, submit a support ticket. Include the details for a Super User account on your site so we can investigate. We may need to edit the extension's code on your server to resolve the issue.

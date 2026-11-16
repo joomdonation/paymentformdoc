@@ -9,4 +9,4 @@ taxonomy:
 
 # Getting Started
 
-Discover what Payment Form is all about and the core-concepts behind it.
+Learn what Payment Form does, how to install and configure it, and where to get help.

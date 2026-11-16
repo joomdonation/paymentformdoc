@@ -5,9 +5,9 @@ taxonomy:
         - docs
 ---
 
-**Payment Form** is a Joomla extension, so you need to have a website built on [Joomla CMS](http://joomla.org) to use the extension. Please look at [https://www.joomla.org/about-joomla/technical-requirements.html](https://www.joomla.org/about-joomla/technical-requirements.html) to see technical requirement for your server. Payment Form is compatible with Joomla 3.x, 4.x, 5.x and 6.x. Below are some basic system requirements:
+To use Payment Form, you need a [Joomla](http://joomla.org) website. Check the [Joomla technical requirements](https://www.joomla.org/about-joomla/technical-requirements.html) for the version of Joomla you use.
 
-- **Joomla**: Version 4.4.0 or higher (Joomla 3 is still supported, but it is now in maintenance mode only, no new feature will be added)
-- **PHP**: Version 7.4.0 or higher
-- **Web Server**: Apache or Nginx with mod_rewrite enabled
-- **Database**: MySQL 5.6+ or MariaDB 10.0+
+- **Joomla** 4.4.0 or later, including Joomla 5 and 6. Payment Form provides maintenance-only support for Joomla 3.
+- **PHP** 7.4.0 or later
+- **Web server** running Apache with `mod_rewrite` enabled or Nginx
+- **Database** running MySQL 5.6 or later, or MariaDB 10.0 or later

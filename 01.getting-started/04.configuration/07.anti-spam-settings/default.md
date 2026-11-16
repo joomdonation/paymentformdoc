@@ -4,17 +4,19 @@ published: true
 media_order: anti-spam-settings.png
 ---
 
-The extension has built-in anti spam system. From configuration page, navigate to Anti-Spam Settings tab to change the default settings if needed to prevent spam
+Payment Form includes built-in spam protection. Open the **Anti-Spam Settings** tab in **Configuration** to adjust these settings.
 
-- **Honeypot Field Name**: This is name of input field which is used to trap spam bots using Honeypot technique
-- **Honeypot Field Css Class**: The css class use for the field above. Better use default value. If you want to change it to use a custom css class like **my-custom-css-class**, please make sure adding the custom css below to Custom CSS of Payment Form to make sure field is not visible for visitors:
+- **Honeypot Field Name** sets the name of the hidden field used to catch spam bots.
+- **Honeypot Field Css Class** sets the CSS class for the honeypot field. We recommend keeping the default. If you use a class such as `my-custom-css-class`, add the following rule in the **Custom CSS** tab to hide the field from visitors.
 
-.my-custom-css-class {
-    display: none !important;
-}
+    ```css
+    .my-custom-css-class {
+        display: none !important;
+    }
+    ```
 
-- **Minimum Form Time (in Seconds)**: It takes time for human to complete form inputs before the form is being submitted, but spam bots does not need that time. So you might want to set this config option to 1 or 2 seconds for example to trap bots. Keep in mind that, if users logged in and access to the form, the inputs on the form could be pre-populated from previous submission, so it takes less time, even for real users to submit the form. So if you are unsure, better leave this config option to empty to prevent un-expected behavior
-- **Maximum Form Submissions Per Session**: Real visitors should not submit the same form many times while spam bots will keep submitting (even to 1000 times). So you might want to set this config option to certain value like 10 to prevent submitting form too many times (which should not happens to real users, just spam bots). For example, it could set to 10
-- **Minimum Payment Amount**: Some time, spam bots might use your form to process payment with small payment about. So to prevent that, you can set this config option to certain value to something like 5 and every submissions with payment amount smaller than 5 (only spam bots do that) will be blocked
+- **Minimum Form Time (in Seconds)** sets how long visitors must wait before submitting a form. A minimum of 1 or 2 seconds can block automated submissions. Signed-in customers may also submit quickly if the form is prefilled from a previous submission. Leave this setting blank if you are unsure what minimum to use.
+- **Maximum Form Submissions Per Session** limits how many times a visitor can submit the same form in one session. For example, set it to `10` to allow up to 10 submissions per session.
+- **Minimum Payment Amount** blocks submissions below the amount you specify. For example, set it to `5` to block payments smaller than 5 in the form's currency.
 
-![anti-spam-settings](anti-spam-settings.png "anti-spam-settings")
+![Anti-spam settings](anti-spam-settings.png "anti-spam-settings")

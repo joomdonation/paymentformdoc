@@ -7,73 +7,73 @@ media_order: 'uninstall.png,dashboard.png,plug_cb_pmhistory.zip'
 ---
 
 ## Installation
-When you purchase **Payment Form** extension from our site, you will receive an email contain the extension in a zip file called **payment_form_unzip_first.zip**. Unzip this file you will see a two zip files: **com_pmform.zip** and **plug_cb_pmhistory.zip**. Follow the instructions below and you will be able to install the extension easily:
+
+After you purchase Payment Form, you'll receive an email with `payment_form_unzip_first.zip`. Extract that file to get `com_pmform.zip` and `plug_cb_pmhistory.zip`.
 
 ### Install the component, modules and plugins
 
-The component, all the modules and plugins are included in a single package com_pmform.zip
-1. Login to back-end of your site using a super user account.
-2. Access to **System -> Install -> Extensions**.
-3. Browse for the file **com_pmform.zip**.
-4. Click on **Upload & Install** button
+The `com_pmform.zip` package contains the Payment Form component, modules, and Joomla plugins.
 
-After the installation process completed, you will be redirected to dashboard screen to start configuring and setting up the extension.
+1. Log in to the Joomla administrator area with a Super User account.
+2. Go to **System → Install → Extensions**.
+3. Select `com_pmform.zip`.
+4. Click **Upload & Install**.
 
-![Dashboard](dashboard.png)
+After installation, Joomla opens the Payment Form dashboard, where you can start configuring the extension.
+
+![Payment Form dashboard](dashboard.png)
 
 ## Install the CB Payment History plugin
-This plugin is a community builder plugin, not a Joomla plugin so it requires Community Builder extension to be installed on your site. If your site doesn't use Community Builder , don't install this plugin. Please note that Payment Form does not require Community Builder extension, so this plugin (and Community Builder) is optional.
 
-1. Download the plugin [plug_cb_pmhistory.zip](plug_cb_pmhistory.zip)
-2. Login to back-end of your site.
-3. Access to **Components -> Community Builder -> Plugins Management** menu item
-4. Click on **install plugin** link.
-5. Browse for the **plug_cb_pmhistory.zip**
-6. Click on **Upload and Install** button
+If your site uses Community Builder, you can install the optional CB Payment History plugin through Community Builder's plugin manager.
+
+1. Download [plug_cb_pmhistory.zip](plug_cb_pmhistory.zip) or use the copy from the purchase ZIP file.
+2. Log in to the Joomla administrator area.
+3. Go to **Components → Community Builder → Plugins Management**.
+4. Click **Install Plugin**.
+5. Select `plug_cb_pmhistory.zip`.
+6. Click **Upload and Install**.
 
 ## Install Sample Data
 
-For new installation, you might want to setup sample data (the data uses on our demo site) to check and understand how certain things are setup. If you want that, login to administrator area of your site and access to this URL
+On a new installation, you can use the sample data from our demo site to see how Payment Form is set up. Log in to the Joomla administrator area and open the following URL.
 
-**https://domain.com/administrator/index.php?option=com_pmform&task=tool.setup_sample_data**
+`https://domain.com/administrator/index.php?option=com_pmform&task=tool.setup_sample_data`
 
-Replace https://domain.com/administrator in the URL above with administrator URL of your site.
+Replace `https://domain.com/administrator` with the URL of your site's Joomla administrator area.
 
 ### Update
-**Payment Form** allows you to use **Joomla Updater** to update the extension whenever there is new version release. To use **Joomla Update**, please follow the instructions below:
 
-1. Go to [https://joomdonation.com/download-ids.html](https://joomdonation.com/download-ids.html), get **Download ID** of your account.
-2. Then go to **Payment Form -> Configuration**, enter the received **Download ID** into **Download ID** config option.
+You can update Payment Form using Joomla's extension updater.
 
-From now on, each time there is new version of **Payment Form** release, Joomla will notify you about it when you access to backend of your site (or access to Payment Form dashboard). You just have to click on the link to update the extension from within your site, don't have to access to our site to download new version and update manually anymore, sweet :).
+1. Get your Download ID from [Download IDs](https://joomdonation.com/download-ids.html) in your JoomDonation account.
+2. In Joomla, go to **Payment Form → Configuration** and enter it in the **Download ID** field.
 
-Please note that each site need to have an unique **Download ID** (the same **Download ID** however, **can be used for all our products**), so if you use the product on different websites, please make sure to generate new **Download ID** for each of these sites.
+When a new version is available, Joomla displays a notice in the administrator area or on the Payment Form dashboard. Follow the link in the notice to update Payment Form from within your site.
+
+Use a unique Download ID for each site. You can use that site's Download ID for all JoomDonation products installed on it.
 
 ## Update Manually
 
-Sometime, you might need to update to latest version manually (for example, when Joomla Updater doesn't work). In this case, please access to **My Downloads** menu item [https://joomdonation.com/my-downloads.html](https://joomdonation.com/my-downloads.html), download latest version of the extension from there. Then install that latest version in the same way as new installation.
+If you need to update Payment Form manually, download the latest version from [My Downloads](https://joomdonation.com/my-downloads.html) and follow the installation steps above to install the new package.
 
 ## Move data from one site to a new site
 
-Sometime, you have to move **Payment Form** data from one site to a new site. To do that, you will need to:
-
-1. Export all **Payment Form** related database tables from old site via phpmyadmin (table with **_pf_** prefix)
-2. Open that sql file, use find and replace function of the text editor to replace table prefix so that it meets the table prefix of the new site (in case your old site and new site use different database table prefix)
-3. Import these database tables into new site database (via phpmyadmin)
-4. Re-Install latest version of Payment Form to the new site so that the database schema will be updated to latest version
-
+1. In phpMyAdmin, export the Payment Form tables from the old site's database. Their names start with the Joomla database prefix followed by `pf_`.
+2. If the sites use different database table prefixes, open the exported SQL file in a text editor and change the prefixes in the table names to match the new site.
+3. Use phpMyAdmin to import the tables into the new site's database.
+4. Reinstall the latest version of Payment Form on the new site to update the database schema.
 
 ## Uninstall
-If you have to uninstall **Payment Form** for some reasons (for example, you want starts from scratch - or maybe after installing and using it, you realize that it doesn't meet your requirement), you can follow the instructions below to get the extension completely uninstalled:
 
-1. Login to backend of your site using a super admin account
-2. Access to **System -> Manage -> Extensions**.
-3. Choose **Package** from **Select Type** filter dropdown
-4. Look for **Payment Form Package**, check on the checkbox next to the item.
-6. Press **Actions -> Uninstall** button in the toolbar.
+1. Log in to the Joomla administrator area with a Super User account.
+2. Go to **System → Manage → Extensions**.
+3. Choose **Package** from the **Select Type** filter.
+4. Select the checkbox next to **Payment Form Package**.
+5. In the toolbar, choose **Actions → Uninstall**.
 
-![uninstall](uninstall.png "uninstall")
+![Uninstalling the Payment Form package](uninstall.png "uninstall")
 
-When you do that, the whole Payment Form package (component, modules, plugins) will be uninstalled.
+Joomla uninstalls the Payment Form component, modules, and plugins.
 
->>>>> When you uninstall **Payment Form**, the database tables related to the extension won't be uninstalled. By doing that, when you re-install the extension in the future, all the old data will be kept and still be available. If you want to completely removing it, please access to your site database via phpmyadmin, look at all the tables with prefix __pf__ and drop these tables
+>>>>> Uninstalling Payment Form keeps its database tables so your data is available if you reinstall it. To permanently delete the data, use phpMyAdmin to drop the tables whose names start with your Joomla database prefix followed by `pf_`.

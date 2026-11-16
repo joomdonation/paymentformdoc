@@ -3,12 +3,12 @@ title: Configuration
 media_order: Payment-Form-Configuration.png
 ---
 
-During the installation process, **Payment Form** will generate default configuration data. However, you should still review all config options and change it to meet your own requirement if needed.
+Payment Form applies default settings during installation. Review them and adjust them to suit your site.
 
-To review and change Configuration, go to **Payment Form -> Configuration**. When you do that, the screen below will be displayed:
+Go to **Payment Form → Configuration** to view and change the settings.
 
-![Payment-Form-Configuration](Payment-Form-Configuration.png "Payment-Form-Configuration")
+![Payment Form Configuration screen](Payment-Form-Configuration.png "Payment-Form-Configuration")
 
->>>>> To see the meaning of a config option / parameter, you can hover the moose over the name / title of that config option
+>>>>> Hover over a setting's name to see its description.
 
-As most of the config options are very easy to understand, in the section below, we will just explain / review the most important config options. If there are other options which are not mentioned here and you don't understand, feel free contact us for support. We are available to assist you whenever you want / you need.
+The following pages explain the main configuration options. If you have questions about another setting, contact our support team.
