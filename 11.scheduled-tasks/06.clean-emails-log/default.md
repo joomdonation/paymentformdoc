@@ -3,7 +3,7 @@ title: 'Clean Emails Log'
 media_order: task-paymentform-clean-emails-log.png
 ---
 
-Use this task to limit how long Payment Form keeps entries in **Payment Form → Emails Log**. It's useful when **Log Emails** is enabled and you want to keep recent entries for troubleshooting. See [General configuration](/getting-started/configuration/general).
+Use this task to limit how long Payment Form keeps entries in the [Emails Log](/payments-management/email-log). It's useful when **Log Emails** is enabled and you want to keep recent entries for troubleshooting.
 
 ## Configure the task
 

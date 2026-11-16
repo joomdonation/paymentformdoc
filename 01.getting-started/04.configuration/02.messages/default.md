@@ -29,3 +29,5 @@ Use tags such as `[FORM_TITLE]` in an email subject and `[PAYMENT_DETAIL]` in an
 If you publish additional offline payment plugins, the **Messages** tab shows a separate **User Email Body** and **Thank You Message** for each method. For example, you can give bank transfer customers different instructions from customers who pay in cash.
 
 Payment Form uses the messages set on the individual form first, then the messages for the selected offline method, then the general offline defaults.
+
+If a payment email is missing or contains unexpected text, check the [Emails Log](/payments-management/email-log).

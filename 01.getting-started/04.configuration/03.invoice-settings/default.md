@@ -6,6 +6,8 @@ media_order: invoice-settings.png
 
 Set **Activate Invoice Feature** to **Yes** to generate PDF invoices for payments with a positive amount.
 
+In **System → Plugins**, check that **Payment Form - Invoice Generator** is enabled. It assigns the invoice number used for PDF downloads and email attachments.
+
 ![Invoice settings](invoice-settings.png "invoice-settings")
 
 ## When invoices are issued

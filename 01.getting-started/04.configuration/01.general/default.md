@@ -38,7 +38,7 @@ Edit the subjects and bodies under [Messages](/getting-started/configuration/mes
 
 ## Privacy Policy (GDPR) Settings
 
-Set **Show Privacy Policy Checkbox** to **Yes** to require customers to accept your privacy policy. Link to a Joomla article with **Privacy Policy Article**, or enter the address of an existing policy page in **Privacy URL**. See [GDPR](/basic-setup/gdpr) for details.
+Set **Show Privacy Policy Checkbox** to **Yes** to require customers to accept your privacy policy. Link to a Joomla article with **Privacy Policy Article**, or enter the address of an existing policy page in **Privacy URL**. See [Privacy Policy Checkbox](/basic-setup/gdpr) for details.
 
 ## Other Settings
 
@@ -55,4 +55,4 @@ These settings apply when a form includes a **File** custom field.
 
 - **Prevent Double Submissions** helps stop the same form submission from being processed twice, for example when a customer clicks the payment button twice.
 - **Tracking Code** inserts your code on Payment Form's built-in completion page for successful payments with a positive total. A form can supply its own tracking code. If you redirect customers to a custom completion URL, add your tracking there.
-- **Log Emails** records Payment Form emails for review under **Payment Form → Emails Log**. Use the [Clean Emails Log](/scheduled-tasks/clean-emails-log) scheduled task to remove older entries automatically.
+- **Log Emails** records Payment Form email attempts. Use the [Emails Log](/payments-management/email-log) to check recipients and messages.

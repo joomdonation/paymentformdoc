@@ -18,7 +18,7 @@ In the Joomla administrator area, go to **Components → Payment Form → Config
 | [CSS Class Mapping](/getting-started/configuration/css-class-mapping) | Replace CSS classes used by Payment Form |
 | [Custom CSS](/getting-started/configuration/custom-css) | Add your own styles |
 | [Anti-Spam Settings](/getting-started/configuration/anti-spam-settings) | Submission timing, session limits, and minimum payment amount |
-| [EU Tax Rules](/basic-setup/eu-tax-rules) | The VAT number field, validation provider, and when to show the field |
+| [Taxes and EU VAT](/basic-setup/eu-tax-rules) | Fixed rates on individual forms and the component's EU VAT settings |
 
 ## Translation on multilingual sites
 

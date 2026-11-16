@@ -8,6 +8,8 @@ media_order: payments.png
 
 In Joomla's administrator area, go to **Components → Payment Form → Payments**, or open the **Payments** tab from the dashboard. For revenue and payment counts by period or form, see the [Dashboard and Revenue Chart](/getting-started/dashboard).
 
+To delegate payment management to staff who work on the site, set up [Frontend Management](/frontend-management). To let signed-in customers see their own payments and invoices, add a [Payment History](/frontend-items/payment-history) menu item.
+
 ![Payments list in the Payment Form administrator area](payments.png)
 
 ## Find a payment
@@ -32,3 +34,4 @@ In Joomla's administrator area, go to **Components → Payment Form → Payments
 - Send an announcement to customers of one form. [Mass Mail](/payments-management/mass-mail)
 - Return a payment through a supported gateway. [Refund Payment](/payments-management/refund-payment)
 - Send the usual payment emails again for selected records. [Resend Email](/payments-management/resend-email)
+- Check the recipient and content of a payment email. [Emails Log](/payments-management/email-log)

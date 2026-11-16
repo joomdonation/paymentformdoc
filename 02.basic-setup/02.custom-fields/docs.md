@@ -23,5 +23,6 @@ In Joomla administrator, go to **Components → Payment Form → Custom Fields**
 - **Make a field required or optional:** Edit it and set **Required** to **Yes** or **No**.
 - **Add a field:** Select **New**. See [Add a custom field](/basic-setup/custom-fields/add-new-custom-field).
 - **Change the order:** Drag a field to its new position in the list.
+- **Change country or state options.** Edit the [country and state lists](/basic-setup/custom-fields/field-types#country-and-state-fields) used by address fields.
 
 Payment amounts can come from a fixed amount set on the form, an **Amount** field where the payer enters an amount, or fee fields that calculate additions from form input. Choose the setup that fits your payment flow; see [Custom fee fields](/basic-setup/custom-fields/custom-fee-fields) for calculated additions.

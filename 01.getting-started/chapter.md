@@ -17,6 +17,15 @@ Learn what Payment Form does, how to install and configure it, and where to get 
 2. Review the currency, sender email, and notification recipients in [General Configuration](/getting-started/configuration/general).
 3. [Create a fixed-amount form](/basic-setup/forms/form-types/fixed-amount-payment-form) with fields for the payer's name and email address.
 4. Enable [Offline Payment](/basic-setup/payment-plugins/offline-payment) to test the form without charging anyone, or configure your [online payment plugin](/basic-setup/payment-plugins) in test mode if it supports one. Select the payment method in the form's **Advanced Settings**.
-5. [Display the form](/frontend-items/display-a-single-form) and submit it from the site frontend. In [Payments Management](/payments-management), check that the amount is correct and that the record shows **Pending** for an offline submission or **Paid** for a successful online test payment. Check that the expected confirmation email arrives.
+5. [Display the form](/frontend-items/display-a-single-form) and [test it as a customer](/getting-started/test-a-form). Check the amount, payment status, and confirmation email.
 
-Before accepting real payments, set the form's payment methods to the ones you plan to offer and switch any online plugins from test to live mode. If you accept offline payments, add your payment instructions to the [offline messages and emails](/getting-started/configuration/messages).
+## Find instructions by task
+
+| What you want to do | Where to go |
+| --- | --- |
+| Set up a form to collect information, take payments, or both | [Form Setup](/basic-setup) |
+| Publish a form or give customers access to payment history | [Frontend Display](/frontend-items) |
+| Approve payments, issue refunds, export records, or delegate payment management | [Payments Management](/payments-management) |
+| Review revenue or payment counts across forms | [Dashboard and Revenue Chart](/getting-started/dashboard) |
+| Add profile prefill, newsletter subscriptions, vouchers, or other automation | [Plugins and Integrations](/plugins) |
+| Automate cleanup of logs, invoices, or payment records | [Scheduled Tasks](/scheduled-tasks) |

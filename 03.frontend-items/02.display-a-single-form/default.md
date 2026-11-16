@@ -40,3 +40,9 @@ Use **Content - Payment Form** when the form belongs within the article body, su
 4. Save the article and open it on your site. If the tag appears as text, check that the plugin is enabled and the tag matches the example.
 
 For forms displayed through a module or article, set the layout in the form editor. If the form requires sign-in, set the menu item, module, or article to an access level that matches the intended audience. Once the form appears, [test a submission from that page](/basic-setup/forms/customize-form#test-the-form-on-your-site).
+
+## Customize the completion page
+
+To change the text shown after submission, edit the form's **Messages** tab. To give Payment Form's built-in completion page its own menu settings, create a published **Payment Form → Payment Complete** menu item and set **Display in Menu** to **No** on its **Link Type** tab. Customers reach this page through the checkout flow.
+
+To send customers to a page you built separately, enter its address in the form's **Custom Payment Complete URL**. Test the result by submitting the form. See [Customize the confirmation](/basic-setup/forms/customize-form#customize-the-confirmation).

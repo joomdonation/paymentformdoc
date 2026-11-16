@@ -44,7 +44,7 @@ Replace `https://domain.com/administrator` with the URL of your site's Joomla ad
 
 ## Update
 
-You can update Payment Form using Joomla's extension updater.
+You can update Payment Form using Joomla's extension updater. In **System → Plugins**, check that **Installer - Payment Form** is enabled.
 
 1. Get your Download ID from [Download IDs](https://joomdonation.com/download-ids.html) in your JoomDonation account.
 2. In Joomla, go to **Payment Form → Configuration** and enter it in the **Download ID** field.

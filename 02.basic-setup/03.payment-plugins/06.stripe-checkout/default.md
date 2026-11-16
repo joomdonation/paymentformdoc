@@ -5,11 +5,11 @@ published: true
 ---
 
 ## Installation
-When you purchase the payment plugin, you will receive a zip file called **os_pmf_stripecheckout_unzip_first.zip**. Unzip that file, you will get the file os_pmf_stripecheckout.zip. Go to **Payment Form** -> **Payment Plugins** to install it as any other payment plugin. See [https://docs.joomdonation.com/paymentform/basic-setup/payment-plugins#install-new-payment-plugin/basic-setup/payment-plugins#install-new-payment-plugin](/basic-setup/payment-plugins#install-new-payment-plugin) for installation instructions if needed.
+Extract `os_pmf_stripecheckout_unzip_first.zip` and [install the plugin ZIP](/basic-setup/payment-plugins#install-new-payment-plugin) from inside it under **Payment Form → Payment Plugins**.
 
 ## Configuration
 
-1. Follow instructions [ https://stripe.com/docs/keys#api-keys]( https://stripe.com/docs/keys#api-keys) , get your Stripe API Keys and enter it into the payment plugin parameters.
+1. Enter your Stripe API keys in the payment plugin settings. [Stripe API keys](https://stripe.com/docs/keys#api-keys)
 
 2. Follow instructions at [https://stripe.com/docs/webhooks/setup#add-endpoint-dashboard](https://stripe.com/docs/webhooks/setup#add-endpoint-dashboard), add the webhook URL below to your Stripe account:
 

@@ -30,26 +30,17 @@ Payment Form is a Joomla extension that lets you create custom forms, collect in
 - **Site builders** who build websites that need to accept payments.
 - **Organization managers** who need to collect payments, donations, or registrations online.
 
-## What's Included?
+## How Payment Form fits into Joomla
 
-- **Main component (`com_pmform`).** Manage Payment Form in the Joomla administrator area and display forms on your site.
-- **Two modules.** Display payment forms and form lists in module positions.
-- **Joomla plugins.** Add integrations, automation, and other features.
-- **Two libraries.** Provide the MVC framework and payment processing support.
+| Extension | Where you use it |
+| --- | --- |
+| **Payment Form component** | Open **Components → Payment Form** to create forms, configure settings, and manage payments. Use Payment Form menu items to give forms or payment history their own pages. [Frontend Display](/frontend-items) |
+| **Payment Form modules** | Use **System → Site Modules** to place a form or list of forms in an existing page. [Modules](/modules) |
+| **Joomla plugins** | Use **System → Plugins** to enable article embeds, Joomla Scheduler tasks, and integrations such as profile prefill or Mailchimp. [Plugins and Integrations](/plugins) |
+| **Payment plugins** | Use **Components → Payment Form → Payment Plugins** to set up online gateways and offline methods such as bank transfer. [Payment Plugins](/basic-setup/payment-plugins) |
 
 ## System Requirements
 
 Payment Form runs on Joomla 4.4 or later, including Joomla 5 and 6. Check the [Requirements](/getting-started/requirements) for PHP, database, and web server compatibility.
 
-## About This Manual
-
-- Installing, updating, and configuring Payment Form
-- Creating and managing forms
-- Adding and configuring fields
-- Setting up payment gateways
-- Configuring taxes and PDF invoices
-- Managing payment records
-- Setting up coupons and plugin integrations
-- Using frontend features and following common workflows
-
-The manual assumes you are familiar with basic Joomla administration, including installing extensions, creating menu items, and managing content.
+Follow the [Quick Start](/getting-started#quick-start) to create and test your first form.

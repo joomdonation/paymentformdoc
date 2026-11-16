@@ -16,8 +16,6 @@ When you purchase the payment plugin, you will receive a zip file called **os_pm
 
 ![plugin_parameters](plugin_parameters.png "plugin_parameters")
 
-3. Also in **Account** -> **Account and API Settings**  -> **API Credentials and Keys** -> Webhooks, create a new webhook
-- The webhook URL is https://yourdomain.com/authaccepthosted_eb_webhook.php (replace https://yourdomain.com with URL of your site)
-- Select event **Authcapture Created (net.authorize.payment.authcapture.created)** for the webhook
+2. Create a webhook in your Authorize.net account. Use `https://yourdomain.com/authaccepthosted_pmf_webhook.php` as the URL, replacing `https://yourdomain.com` with your site's base URL. Select **Authcapture Created (net.authorize.payment.authcapture.created)** as the event.
 
 ![webhook](webhook.png "webhook")

@@ -33,6 +33,8 @@ Set the site-wide defaults in **Components → Payment Form → Configuration**.
 
 When **User Registration Integration** is enabled, guests enter a username and password even if **Show Login Box** is disabled. Payments submitted while signed in are associated with the user's Joomla account. To prefill fields for returning users, see [Automatic Form Field Population](/automatic-form-field-population).
 
+To create accounts only after payment succeeds, set **Only Create User Account For Success Payment** to **Yes** in [General Configuration](/getting-started/configuration/general#general-settings). In **System → Plugins**, check that **Payment Form - Account Creation** is enabled. Test with a new email address. If you accept offline payments, check that the account is created after you [approve the payment](/payments-management/approve-payments).
+
 ## Customize the confirmation
 
 Use the form's **Messages** tab to tell payers what to expect and what to do after submitting. For an offline payment, include payment instructions in both **Thank You Message (Offline Payment)** and **User Email Body (Offline Payment)**. Keep the built-in completion page to display the thank-you message, or put those instructions on your own page and enter its URL under **Custom Payment Complete URL**.
@@ -41,4 +43,4 @@ To let payers review their details before submitting, enable **Show Confirmation
 
 ## Test the form on your site
 
-Set the form's **Published** setting to **Yes** and make sure its **Publish Up** and **Publish Down** dates allow access. After you [display the form](/frontend-items/display-a-single-form), open the same page your payers will use. Check the layout on desktop and mobile, try any conditional fields, and verify the total and available payment methods. Submit the form and check the resulting record in **Payments**, the confirmation page, and any emails you configured. If the form uses Joomla access levels, repeat the test as a guest or a user with the intended access.
+Set **Published** to **Yes** and check the publish dates and access level. After you [display the form](/frontend-items/display-a-single-form), preview the layout on desktop and mobile, then [submit a test payment or entry](/getting-started/test-a-form).

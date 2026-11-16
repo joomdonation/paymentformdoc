@@ -16,6 +16,8 @@ Add **Payment History** to your site so customers can review their payment recor
 
 The page shows the form title, payment date, amount, and transaction ID. Published fields with **Show On Payments List** enabled appear as additional columns.
 
+If your site uses Community Builder, Payment Form also provides an optional [CB Payment History plugin](/getting-started/installation#install-the-cb-payment-history-plugin).
+
 ## Let customers download invoices
 
 1. In **Components → Payment Form → Configuration → Invoice Settings**, set **Activate Invoice Feature** to **Yes**. See [Invoice Settings](/getting-started/configuration/invoice-settings) for when invoices are issued, including for pending offline payments.

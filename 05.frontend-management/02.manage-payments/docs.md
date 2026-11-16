@@ -1,5 +1,5 @@
 ---
-title: 'Manage Payments'
+title: 'Manage Payments on the Site'
 media_order: 'payments-management-permission.png,16.frontend-payments-management.png'
 ---
 

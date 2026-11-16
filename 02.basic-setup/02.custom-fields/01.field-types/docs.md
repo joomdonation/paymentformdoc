@@ -40,3 +40,5 @@ Payment Form includes the following 22 custom field types:
 ### Country and state fields
 
 Use no more than one **Countries** field and one **States** field on a form. They work together: changing the country updates the state options. If the form has a **States** field but no **Countries** field, the options come from the **Default Country** selected in Payment Form configuration.
+
+To change the available options, go to **Components → Payment Form → Countries** or **States**. These lists are shared by all forms. In **Countries**, edit and publish the countries you want customers to see. Use the official two- and three-letter country codes, especially if you use [EU VAT](/basic-setup/eu-tax-rules#calculate-eu-vat), which looks up the rate by country code. In **States**, select the country to find its states or provinces. To add one, click **New**, select its country, enter its name and codes, and publish it. Test the dropdowns together on the form.

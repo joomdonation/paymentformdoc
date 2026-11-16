@@ -17,7 +17,7 @@ Use Payment Form to collect anything from a fixed invoice payment to a donation 
 2. [Create the form](/basic-setup/forms/add-new-form). Set the base amount, access level, and payment methods for this form.
 3. [Configure the fields and checkout experience](/basic-setup/forms/customize-form). Decide what to collect, whether to offer login and registration, and what to show after submission.
 4. [Choose a layout](/basic-setup/forms/modern-form-layouts). Set the number of columns, field widths, and label placement.
-5. [Display the form on your site](/frontend-items/display-a-single-form). Open it as a visitor and test the submission through to the completion page. For an online payment, use the gateway's test mode when available.
+5. [Display the form on your site](/frontend-items/display-a-single-form) and [test the full submission](/getting-started/test-a-form), including the payment status and emails.
 
 ## Manage existing forms
 

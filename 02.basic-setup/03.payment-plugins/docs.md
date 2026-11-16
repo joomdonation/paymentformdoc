@@ -10,6 +10,8 @@ Payment Form includes [PayPal Standard](/basic-setup/payment-plugins/paypal), [A
 
 In the Joomla administrator area, go to **Components → Payment Form → Payment Plugins**. From within Payment Form, you can also open **Setup → Payment Plugins**.
 
+For Joomla plugins that act on a form or its payment records, such as Mailchimp or Google Sheets, see [Plugins and Integrations](/plugins).
+
 ![Payment Plugins management screen](Payment-Form-Manage-Payment-Plugins.png)
 
 ## Install New Payment Plugin
