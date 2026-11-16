@@ -6,7 +6,7 @@ taxonomy:
 media_order: payments.png
 ---
 
-In Joomla's administrator area, go to **Components → Payment Form → Payments**. You can also open **Payments** from the Payment Form dashboard.
+In Joomla's administrator area, go to **Components → Payment Form → Payments**, or open the **Payments** tab from the dashboard. For revenue and payment counts by period or form, see the [Dashboard and Revenue Chart](/getting-started/dashboard).
 
 ![Payments list in the Payment Form administrator area](payments.png)
 

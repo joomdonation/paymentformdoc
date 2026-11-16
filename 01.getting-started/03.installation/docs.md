@@ -3,7 +3,7 @@ title: 'Installation & Upgrade'
 taxonomy:
     category:
         - docs
-media_order: 'uninstall.png,dashboard.png,plug_cb_pmhistory.zip'
+media_order: 'uninstall.png,plug_cb_pmhistory.zip'
 ---
 
 ## Installation
@@ -19,9 +19,7 @@ The `com_pmform.zip` package contains the Payment Form component, modules, and J
 3. Select `com_pmform.zip`.
 4. Click **Upload & Install**.
 
-After installation, Joomla opens the Payment Form dashboard, where you can start configuring the extension.
-
-![Payment Form dashboard](dashboard.png)
+After installation, Joomla opens the [Payment Form dashboard](/getting-started/dashboard), where you can start configuring the extension.
 
 Follow the [Quick Start](/getting-started#quick-start) to configure and test your first form.
 
