@@ -7,32 +7,20 @@ published: true
 media_order: 'payment-form-user-groups-plugin.png,pmform-joomla-user-groups.png,pmf-joomlagroups.png'
 ---
 
-The **Payment Form - Joomla User Groups** plugin automatically manages users' Joomla user group assignments after payment completion. You can configure it to assign users to specified user groups or remove them from selected groups when they complete a payment. This plugin is essential for creating paid membership levels, granting access to restricted content, or managing user permissions based on payment transactions.
+Use **Payment Form - Joomla User Groups** to grant access to restricted Joomla content after payment or move a customer from one user group to another. For example, a course payment form can add the customer to a **Course Participants** group that can access the course materials. Configure the group's access in Joomla before setting up the form.
 
-## Configuration Instructions
+## Configure group changes for a form
 
-### Step 1: Enable the Plugin
+1. In Joomla administration, go to **System → Plugins**, find **Payment Form - Joomla User Groups**, and enable it.
+2. Go to **Components → Payment Form → Forms**, edit the form, and open **Joomla User Groups Settings**.
+3. In **Add User Groups**, select the groups to assign after payment. This field is labeled **User Groups** in the screenshot below. Select the groups here even if you have configured **Default User Groups** in the plugin settings, since the plugin may skip the default when this field is empty.
+4. In **Remove User Groups**, select any groups the customer should leave. If you select the same group in both fields, the plugin removes it.
+5. Save the form.
 
-1. Navigate to **System → Plugins**
-2. Search for **Payment Form - Joomla User Groups**
-3. Click the plugin name to open settings
-4. Set **Status** to **Enabled**
-5. Configure **Default User Groups** if you want a global default
-6. Click **Save & Close**
+![Group settings in the Payment Form editor](pmf-joomlagroups.png)
 
-![payment-form-user-groups-plugin](payment-form-user-groups-plugin.png "payment-form-user-groups-plugin")
+## Test the group changes
 
-### Step 2: Configure Per-Form Settings (Recommended)
+Submit a test payment while signed in, or use a form that creates a Joomla account for the customer. The payment must be linked to a Joomla user account for the plugin to update groups. For an offline payment, [mark it as Paid](/payments-management/approve-payments) first.
 
-1. Go to **Components → Payment Form → Forms**
-2. Edit the form for which you want to configure user group assignments
-3. Click the **Joomla User Groups Settings** tab
-4. Select one or more **User Groups** to assign in **User Groups** parameter
-5. If you also want to remove users from certain user groups after they complete payment, select those groups in the **Remove User Groups** parameter
-6. Click **Save & Close**
-
-With this configuration, when users complete payment through the form, they will be assigned to the selected user groups and removed from the groups specified in the **Remove User Groups** parameter.
-
-**Note:** Users must either register for an account through the form or already be logged in when completing the payment for this feature to work.
-
-![pmf-joomlagroups](pmf-joomlagroups.png "pmf-joomlagroups")
+Open the account under **Users → Manage** and verify its **Assigned User Groups**. Then sign in as the test user and check that the intended content is accessible.

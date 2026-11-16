@@ -1,5 +1,5 @@
 ---
-title: 'Google Sheet'
+title: 'Google Sheets'
 taxonomy:
     category:
         - docs
@@ -7,78 +7,36 @@ published: true
 media_order: 'create-service-account.png,enable_google_calendar_api.png,create_new_project.png,pmform-googlesheet-configuration.png'
 ---
 
-If you want to synchronize payment records of your forms automatically to Google Spreadsheets, you can use **Payment Form - Google Spreadsheet** plugin. This is a paid add-on, it does not come with Payment Form package, and need to be purchased separately. Go to https://joomdonation.com/joomla-extensions/joomla-payment-form.html , look at Paid Add-ons tab, see and purchase the plugin from there. Download, install it and then go to **System** -> **Plugins**, find and enable the plugin to use the integration. There are few setup steps needed for the synchronization to work:
+Use **Payment Form - Google Spreadsheet** to keep a form's payment records in a Google Sheets tab for reporting or collaboration. Purchase and download the plugin from the **Paid Add-ons** section of the [Payment Form product page](https://joomdonation.com/joomla-extensions/joomla-payment-form.html). Install it in Joomla, then enable it under **System → Plugins**.
 
-### Create a Google Cloud Project
-1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
-2. Click **Select a project** → **New Project**.
-3. Enter a name (e.g., `Payment Form - Google Spreadsheet`) and click **Create**.
+## Set up Google Sheets access
 
-![create_new_project](create_new_project.png "create_new_project")
+1. In the [Google Cloud console](https://console.cloud.google.com/), create or select a project. Open **APIs & Services → Library**, search for **Google Sheets API**, and enable it.
+2. Go to **IAM & Admin → Service Accounts** and click **Create service account**. Give the account a name such as `payment-form-sheets`. You can finish without assigning a project role. You will grant access to the spreadsheet in Google Sheets.
+3. Open the new service account and copy its email address. On the **Keys** tab, choose **Add key → Create new key**, select **JSON**, and click **Create**.
+4. Rename the downloaded key file to `service-account.json` and upload it to `plugins/pmform/googlesheet/credentials/` on your Joomla site. Keep the key private and ensure the web server blocks public access to the credentials directory.
+5. In Google Sheets, open the destination spreadsheet, click **Share**, add the service account's email address, and grant **Editor** access.
 
-### Enable the Google Sheets API
+If your Google Cloud organization blocks service account key creation, contact your Google Cloud administrator. This plugin looks for a JSON key at the path above. See [Google's service account setup guide](https://developers.google.com/workspace/guides/create-credentials) and [Google's key creation troubleshooting guide](https://docs.cloud.google.com/iam/docs/troubleshoot-org-policies).
 
-1. Access to the project, then click on  **Enable APIs and services**
-2. Search for **Google Sheets API**.
-3. Click **Google Sheets API** → **Enable**.
+## Connect a form to a spreadsheet tab
 
-![enable_google_calendar_api](enable_google_calendar_api.png "enable_google_calendar_api")
+1. Create a dedicated tab for the form. If you use one spreadsheet for several forms, give each form a different tab.
+2. In Joomla, go to **Components → Payment Form → Forms**, edit the form, and open **Google Sheet Settings**.
+3. In **Sheet ID**, enter the spreadsheet ID from the URL. In `https://docs.google.com/spreadsheets/d/ABC123/edit#gid=0`, enter `ABC123`.
+4. In **Sheet Name**, enter the exact tab name, such as `WorkshopPayments`. If the name contains spaces or special characters, enclose it in single quotes, for example `'Workshop Payments'`. See [Google's guide to A1 notation](https://developers.google.com/workspace/sheets/api/guides/concepts).
+5. Save the form. Repeat these steps for each form you want to synchronize.
 
-### Create a Service Account
+![Sheet ID and Sheet Name in Google Sheet Settings](pmform-googlesheet-configuration.png)
 
-1. Go to **IAM & Admin** > **Service Accounts**.
-2. Click **+ CREATE SERVICE ACCOUNT** at the top.
-3. Fill in the following:
-   - **Service account name**: (e.g., `eb-google-calendar-bot`)
-   - Click **Create and continue**.
-4. In the **Grant this service account access to the project** step, skip assigning roles and click **Continue**, then **Done**.
+## How synchronization works
 
-![create-service-account](create-service-account.png "create-service-account")
+On a sync, the plugin clears the destination tab's cell values and writes the current export from cell A1. Keep manual entries and formulas in a separate tab. The export includes standard payment columns and form fields enabled for **Show On Export**. Payment Form's **Show Incomplete Payment Records** setting also affects which records are included. Pending offline payments can appear in the export.
 
-### Create and Download a JSON Key File
-1. Find your new service account in the list and click on its name.
-2. Go to the **Keys** tab.
-3. Click **Add Key** → **Create new key**.
-4. Choose **JSON** format, then click **Create**.
-5. A `.json` key file will be downloaded to your computer. **Keep this file safe!**
-6. Rename the downloaded json file to be **service-account.json**, upload that file to **plugins/pmform/googlesheet/credentials** folder on your site.
+Saving the form settings prepares the connection. To populate the tab, complete a test payment or open and save an existing payment record without changing its status. The next successful sync includes existing payment records eligible for export. If there are no eligible records left, the plugin skips the export, so the tab can retain the previous data.
 
-### Share Your Google Spreadsheet with the Service Account
-To allow the system to write data into your Google Sheet, you need to share the sheet with the service account just like you would with any collaborator.
+## Troubleshoot synchronization
 
-1. Open your Google Sheet in your browser.
-2. In the top right corner, click the **Share** button.
-3. In the “Add people and groups” field, paste the service account email provided to you. It looks something like this **your-service-account@your-project.iam.gserviceaccount.com**
-4. Click **Add people** and enter your service account’s email (e.g., `joomla-calendar-bot@your-project.iam.gserviceaccount.com`).
-5. Make sure the permission is set to **Editor**.
-6. Click **Send** or **Share** to save.
-
-### Configure Google Sheet Settings for each event
-
-Payment records from each form will be synchronized to a separate sheet. So you if you want payment records of certain form to be synchronized to your Google Spreadsheet, edit the form, look at **Google Sheet Settings** tab, enter Sheet ID and Sheet Name there. Then payment records of that form will be synchronized to that sheet. Keep in mind that each form needs a separate sheet to store payment records.
-
-![pmform-googlesheet-configuration](pmform-googlesheet-configuration.png "pmform-googlesheet-configuration")
-
-#### How to get Sheet ID
-
-1. Open your Google Sheet in your web browser.
-
-2. Look at the URL in your browser’s address bar. It will look something like this:
-
-https://docs.google.com/spreadsheets/d/1A2B3C4D5E6F7G8H9I0Jabcdefg123456/edit#gid=0
-
-3. The **Sheet ID** is the long string of letters and numbers **between** `/d/` and `/edit`: . In this example , it is **1A2B3C4D5E6F7G8H9I0Jabcdefg123456**
-
-#### How to get Sheet Name
-
-1. Look at the bottom of your Google Sheet window.
-
-2. You’ll see one or more **tabs** like this:
-
-*(Example tab names: Sheet1, Leads, Orders, etc.)*
-
-3. The name of the tab you want to use is the **Sheet Name**.
-
-> By default, this is often called `Sheet1`, but you or someone else may have renamed it.
-
-4. You can rename the tab by **double-clicking** it and entering a new name (e.g. `Leads`, `Orders`, or `ContactForm`).
+- **Google Sheet Settings is missing.** Check that the plugin is enabled and that `service-account.json` is present at the exact path above. The plugin loads its form settings only when that file exists.
+- **The tab is empty after a test payment.** Verify the spreadsheet ID, tab name, service account's **Editor** access, and that the Google Sheets API is enabled for the project. If the write failed, the plugin can record the error in `plugins/pmform/googlesheet/src/Extension/googlesheet_errors_logs.txt`.
+- **The tab is stale after a payment status change.** Open the affected payment and save it again without changing its status to trigger a fresh export.

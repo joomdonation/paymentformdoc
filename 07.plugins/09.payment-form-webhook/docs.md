@@ -7,60 +7,44 @@ published: true
 media_order: 'webhook-plugin-parameters.png,payment-form-webhook.png'
 ---
 
-This plugin gives you a way to send payment data to an external URL via a POST request. Whenever someone makes payment for your configured form, a POST request will be sent to the configured URL with all payment data. The external system can then uses that data in the way it wants.
+Use **Payment Form - Webhook** to send payment data to a CRM, accounting tool, or another service that accepts HTTP POST requests. Enable it only on the forms whose data should go to that service.
 
-If you want to use this feature, find the plugin **Payment Form - Webhook**, configure necessary parameters and enable it.
+## Configure the plugin
 
-## Plugin Parameters
+In Joomla administration, go to **System → Plugins**, open **Payment Form - Webhook**, and enable it. Set the following options to match the receiving service.
 
-**- Default URL** : That's the default external URL which will receive data sends from Payment Form. Each form can override this default URL if needed.
-**- Content Type**: Determine the how the format of data which will be passed to external system. If you choose **application/json**, the external URL will receive data in JSON format. If you choose **application/x-www-form-urlencoded**, the data will be passed in key-value pair (array)
+| Setting | How to use it |
+| --- | --- |
+| **Content Type** | Use the default `application/json` for JSON, or choose `application/x-www-form-urlencoded` for URL-encoded form data. |
+| **Send Webhook For Pending Payment** | Defaults to **No**. Set it to **Yes** to also send a request when a pending offline payment is saved. |
+| **HTTP Headers** | Add any headers the service requires, such as an `Authorization` header. |
+| **Fields Mapping** | Rename keys to match the service's expected field names. For example, enter `first_name` as the original field name and `firstname` as the new field name. |
+| **Additional Data** | Add fixed key-value pairs, such as `source` with the value `payment_form`. If a key matches a key in the payload after mapping, this value replaces it. |
 
-**HTTP Headers**: Allows you to define additional HTTP headers which will be sent in the request (beside the content type header above). Usually, you will need it to pass authentication header so that the external system will allow/except the request.
+![Webhook options in Joomla plugin settings](webhook-plugin-parameters.png)
 
-**Fields Mapping**: If the external system which you want to pass data to expects to receive difference field with the field passed by the plugin, define the field mapping here (kind of field name alias). For example, the plugin pass **first_name** by default, but your system expect to receive **firstname**, you can add a mapping first_name => firstname
+## Enable the webhook for a form
 
-**Additional Data**: Allows you to define the extra data (key and it's value) which will be passed to the external URL if needed.
-![webhook-plugin-parameters](webhook-plugin-parameters.png "webhook-plugin-parameters")
+1. Go to **Components → Payment Form → Forms**, edit the form, and open **Webhook Settings**.
+2. Set **Enable Webhook** to **Yes**. It defaults to **No**.
+3. Enter the receiving endpoint in **Webhook URL** and save. Enter this URL on every form that uses the webhook. The plugin's **Default URL** setting may be ignored when the form's URL is blank.
 
-## Enable Webhook for each form
-By default, webhook is disabled for all forms. If you want to enable it for certain form, edit the form, look at Webhook Settings tab, set **Enable**  to Yes. Optional, you could also specify URL which will receive webhook data into **URL** inside that form. If the URL is entered there, it will override the default URL configured in the plugin parameter.
+![Enable Webhook and Webhook URL in the form editor](payment-form-webhook.png)
 
-![payment-form-webhook](payment-form-webhook.png "payment-form-webhook")
+## When requests are sent
 
-## The data sent by the plugin to external URL
+The plugin sends a request after successful payment. For offline payments, this happens when an administrator [marks the record as Paid](/payments-management/approve-payments). If **Send Webhook For Pending Payment** is enabled, the same offline payment can generate two requests, one when the pending record is saved and one when it is approved. Use the payment record `id` to match the two requests and `published` to distinguish pending (`0`) from paid (`1`).
 
-When enabled, the plugin will send many data related to that configured URL in a post request. Below are the information of the data which the external system will receive
+## What the request contains
 
-### Payment Record Data
+The payload includes payment details and form field values keyed by the fields' configured names, such as `first_name`, `email`, or `company_name`. Values come from Payment Form's message tags, so some fields may be empty and some values are formatted for display.
 
-**Data for any custom fields collected on registration form** 
+| Data | Example keys |
+| --- | --- |
+| Payment and form identifiers | `id`, `form_id`, `form_title`, `transaction_id` |
+| Amounts and currency | `total_amount`, `discount_amount`, `tax_amount`, `payment_processing_fee`, `gross_amount`, `currency` |
+| Status and other details | `published`, `payment_date`, `payment_method`, `invoice_number`, `coupon_code` |
 
-- first_name
-- last_name
-- organization
-- address
-- city
-- state
-...
-- custom_field_1
-- custom_field_2
-.....
+Amount fields can contain formatted strings, including the currency symbol. The payment method is the display name. The payload can also contain personal data, including the payer's contact details and IP address.
 
-**Other payment related data**
-- id
-- form_id
-- user_id
-- total_amount
-- discount_amount
-- tax_amount
-- payment_processing_fee
-- gross_amount
-- currency
-- payment_date
-- payment_method
-- transaction_id
-- published
-- language
-- invoice_number
-- coupon_code
+Complete a test payment and confirm that the receiving service records the request, accepts the headers and field names, and can read the values. The plugin does not retry failed requests, so check the receiving service's request history when troubleshooting.

@@ -7,41 +7,35 @@ published: true
 media_order: paymentform-php-script.png
 ---
 
-The **PHP Script** plugin allows you to execute custom PHP code at specific points in the payment process. This powerful developer tool enables advanced customization, integration with external systems, custom business logic, and workflows that aren't available through standard plugin functionality. This plugin provides maximum flexibility for developers to extend Payment Form capabilities without modifying core files.
+Use **Payment Form - PHP Script** when you need custom PHP code to run during the payment workflow. For example, a developer can record a form submission in another Joomla extension or trigger an action after a payment succeeds.
 
-**Warning:** This plugin requires PHP programming knowledge and should only be used by experienced developers. Errors in custom scripts can prevent payment processing or cause system issues.
+The scripts run on the server during payment processing. Test them on a staging site before enabling them on a live form, since PHP errors can interrupt processing.
 
-Go to System -> Plugins, find and enable plugin **Payment Form - PHP Script** if you want to use this feature. Now, when you add/edit a form, you will see **PHP Script Settings** allows you to execute the script you want for each form.
+## Add a script to a form
 
-![paymentform-php-script](paymentform-php-script.png "paymentform-php-script")
+1. In Joomla administration, go to **System → Plugins**, find **Payment Form - PHP Script**, and enable it.
+2. Go to **Components → Payment Form → Forms**, edit the form, and open **PHP Script Settings**.
+3. Paste PHP statements into the field for the event you want to handle, omitting the opening and closing PHP tags. Leave any unused field blank, then save the form.
 
-- **Payment Store Script**: PHP code executed when payment record is first created (offline payments) or stored. Runs during `onAfterStorePayment` event
-- **Payment Active Script**: PHP code executed when payment becomes successful (online payment completion or offline payment activation). Runs during `onAfterPaymentSuccess` event.
+| Setting | When it runs | Example use |
+| --- | --- | --- |
+| **Payment Stored Script** | After a frontend submission saves the payment record and custom field values, before the payment method is processed. This applies to online and offline submissions. | Record a submission as pending in another system. |
+| **Payment Success Script** | After a payment succeeds, including when an administrator [marks an offline payment as Paid](/payments-management/approve-payments). | Fulfil an order or update an external record after payment. |
 
-## How It Works
+![Stored and success script fields in PHP Script Settings](paymentform-php-script.png)
 
-### Payment Store Script Execution
+## Read payment and form data
 
-1. **Trigger Point** - Offline payment record is saved to database
-2. **Script Execution** - Payment Store Script code runs
-3. **Available Data** - Access to payment record and form field data
-4. **Use Cases** - Logging, preliminary validations, staging data
+Both scripts receive the payment record as `$row`. Use `$row->id` for the payment record ID, `$row->form_id` for the form ID, `$row->gross_amount` for the calculated amount due, and `$row->user_id` for the Joomla account ID when the payment is linked to an account.
 
-### Payment Active Script Execution
+Custom field values are stored separately. Use Payment Form's helper to read them by field name.
 
-1. **Trigger Point** - Online payment successfully completed OR offline payment activated by admin
-2. **Script Execution** - Payment Active Script code runs
-3. **Available Data** - Full payment record, form fields, payment status
-4. **Use Cases** - Final processing, integrations, notifications, data updates
+```php
+use OSSolution\PaymentForm\Site\Helper\Helper as PaymentFormHelper;
 
-### Available Variables in Scripts
+$fields = PaymentFormHelper::getFormFields($row->form_id);
+$values = PaymentFormHelper::getPaymentData($row, $fields);
+$reference = $values['customer_reference'] ?? '';
+```
 
-Both scripts have access to:
-
-- `$row` - Payment record object with all payment data
-- `$row->form_id` - ID of the form
-- `$row->id` - Payment record ID
-- `$row->payment_amount` - Payment amount
-- `$row->user_id` - User ID (if logged in)
-- Form field data accessible via field mapping
-- Joomla framework classes and functions
+Replace `customer_reference` with the field's configured name. Test the script at the event you selected. For example, submit an offline test payment, check what happens when the record is saved, then approve it and check what happens when it becomes paid.
